@@ -8,6 +8,7 @@ import 'package:shapee_project/constant/app_dimen.dart';
 import 'package:shapee_project/constant/app_theme.dart';
 import 'package:shapee_project/models/keyvalue_obj.dart';
 import 'package:shapee_project/screens/account/welcome/welcome_screen.dart';
+import 'package:shapee_project/utils/constant.dart';
 import 'package:shapee_project/utils/string_utils.dart';
 
 class IntroScreen extends StatefulWidget {
@@ -28,25 +29,33 @@ class _IntroScreenState extends State<IntroScreen> with AfterLayoutMixin{
     slides.add(
       new KeyValueObj(
         value: 'Test a Psychic’s intuitive “testing” platform allows both Clients & Reader/Advisors to interact with each other in order to test the Reader’s abilities.',
-        pathImage: StringUtils.getUrlAssets("image1")
+        pathImage: StringUtils.getUrlAssets("image1"),
+        height: 189,
+        width: 284
       ),
     );
     slides.add(
       new KeyValueObj(
           value: 'Readings can take place in any of 4 different platforms of your choice: CHAT, PHONE, EMAIL or SMS.',
-          pathImage: StringUtils.getUrlAssets("image2")
+          pathImage: StringUtils.getUrlAssets("image2"),
+          height: 182,
+          width: 275
       ),
     );
     slides.add(
       new KeyValueObj(
           value: 'Test a Psychic’s intuitive “testing” platform allows both Clients & Reader/Advisors to interact with each other in order to test the Reader’s abilities.',
-          pathImage: StringUtils.getUrlAssets("image3")
+          pathImage: StringUtils.getUrlAssets("image3"),
+          height: 312,
+          width: 312
       ),
     );
     slides.add(
       new KeyValueObj(
           value: 'With a variety of reading methods: Clairvoyance, Tarot, Medium, Astrology, Life Coaching etc.',
-          pathImage: StringUtils.getUrlAssets("image4")
+          pathImage: StringUtils.getUrlAssets("image4"),
+          height: 232,
+          width: 312
       ),
     );
   }
@@ -58,6 +67,7 @@ class _IntroScreenState extends State<IntroScreen> with AfterLayoutMixin{
 
   @override
   Widget build(BuildContext context) {
+    sizeDevice = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppColors.primary,
       body: Stack(
@@ -109,11 +119,11 @@ class _IntroScreenState extends State<IntroScreen> with AfterLayoutMixin{
                 Expanded(child: Container()),
                 Image.asset(
                   item.pathImage,
-                  height: 275,
-                  width: 275,
+                  height: item.height,
+                  width: item.width,
                 ),
                 SizedBox(
-                  height: 150,
+                  height: sizeDevice.height / 6,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: AppDimens.paddingDefault),
@@ -124,7 +134,7 @@ class _IntroScreenState extends State<IntroScreen> with AfterLayoutMixin{
                   ),
                 ),
                 SizedBox(
-                  height: 150,
+                  height: sizeDevice.height / 5,
                 )
               ],
             );
@@ -141,7 +151,7 @@ class _IntroScreenState extends State<IntroScreen> with AfterLayoutMixin{
     return Positioned(
       left: 0.0,
       right: 0.0,
-      bottom: 50.0,
+      bottom: sizeDevice.height / 10,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: DotsIndicator(

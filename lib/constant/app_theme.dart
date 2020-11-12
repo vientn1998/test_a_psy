@@ -10,8 +10,9 @@ class AppTheme {
   static setUpStatusBar() {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
         statusBarColor: Colors.white, // Color for Android
-        statusBarBrightness: Brightness.dark // Dark == white status bar -- for IOS.
-    ));
+        statusBarBrightness:
+            Brightness.dark // Dark == white status bar -- for IOS.
+        ));
     // SystemChrome.setEnabledSystemUIOverlays ([SystemUiOverlay.top]);
   }
 
@@ -32,7 +33,19 @@ class AppTheme {
       fontFamily: FontFamily.regular,
       accentColorBrightness: Brightness.dark);
 
-  static const TextStyle text15Regular = TextStyle(
+  static const TextStyle text10RegularWhite = TextStyle(
+    fontFamily: FontFamily.regular,
+    fontSize: 10,
+    color: AppColors.white,
+  );
+
+  static const TextStyle text13RegularWhite = TextStyle(
+    fontFamily: FontFamily.regular,
+    fontSize: 13,
+    color: AppColors.white,
+  );
+
+  static const TextStyle text15RegularWhite = TextStyle(
     fontFamily: FontFamily.regular,
     fontSize: 15,
     color: AppColors.white,
@@ -41,12 +54,6 @@ class AppTheme {
   static const TextStyle text15Bold = TextStyle(
     fontFamily: FontFamily.bold,
     fontSize: 15,
-    color: AppColors.white,
-  );
-
-  static const TextStyle text13RegularWhite = TextStyle(
-    fontFamily: FontFamily.regular,
-    fontSize: 13,
     color: AppColors.white,
   );
 
@@ -62,10 +69,46 @@ class AppTheme {
     color: AppColors.text,
   );
 
+  static const TextStyle text16MediumWhite = TextStyle(
+    fontFamily: FontFamily.medium,
+    fontSize: 16,
+    color: AppColors.white,
+  );
+
+  static const TextStyle text16BoldWhite = TextStyle(
+    fontFamily: FontFamily.bold,
+    fontSize: 16,
+    color: AppColors.white,
+  );
+
+  static const TextStyle text16RegularWhite = TextStyle(
+    fontFamily: FontFamily.regular,
+    fontSize: 16,
+    color: AppColors.white,
+  );
+
   static const TextStyle text16MediumTitle = TextStyle(
     fontFamily: FontFamily.medium,
     fontSize: 16,
     color: AppColors.title,
+  );
+
+  static const TextStyle text26MediumWhite = TextStyle(
+    fontFamily: FontFamily.medium,
+    fontSize: 26,
+    color: AppColors.white,
+  );
+
+  static const TextStyle textTextFieldPinCOde = TextStyle(
+    fontFamily: FontFamily.regular,
+    fontSize: 44,
+    color: AppColors.white,
+  );
+
+  static const TextStyle text26MediumHint = TextStyle(
+    fontFamily: FontFamily.regular,
+    fontSize: 22,
+    color: AppColors.white,
   );
 
   static const TextStyle buttonDefault = TextStyle(
@@ -80,9 +123,15 @@ class AppTheme {
     color: AppColors.white,
   );
 
+  static const TextStyle textInvalidTextField = TextStyle(
+    fontFamily: FontFamily.bold,
+    fontSize: 14,
+    color: AppColors.invalid,
+  );
+
   static const TextStyle textDesIntro = TextStyle(
       fontFamily: FontFamily.regular, fontSize: 16, color: Colors.white);
 
   static const TextStyle textTitleAppBar = TextStyle(
-      fontFamily: FontFamily.medium, fontSize: 16, color: Colors.white);
+      fontFamily: FontFamily.medium, fontSize: 20, color: Colors.white);
 }

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:shapee_project/constant/app_color.dart';
 import 'package:shapee_project/constant/app_dimen.dart';
 import 'package:shapee_project/constant/app_font.dart';
 import 'package:shapee_project/constant/app_theme.dart';
+import 'package:shapee_project/screens/account/change_password/email_enter_screen.dart';
+import 'package:shapee_project/screens/account/fill_information/fill_information_screen.dart';
 
 class ChooseRoleScreen extends StatelessWidget {
   @override
@@ -56,12 +59,14 @@ class ChooseRoleScreen extends StatelessWidget {
       child: Container(
         height: AppDimens.heightButton,
         child: RaisedButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.to(ChangePasswordScreen());
+          },
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppDimens.borderRadiusBtn),
           ),
           child: Text(
-            'Readers',
+            'Reader',
             style: AppTheme.text15Bold,
           ),
           elevation: 0,
@@ -80,7 +85,9 @@ class ChooseRoleScreen extends StatelessWidget {
           borderRadius: BorderRadius.circular(AppDimens.borderRadiusBtn),
         ),
         child: RaisedButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.to(FillInformation());
+          },
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppDimens.borderRadiusBtn),
           ),

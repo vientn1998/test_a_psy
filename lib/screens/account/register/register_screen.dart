@@ -49,11 +49,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 SizedBox(height: AppDimens.height40,),
                 Text("or", style: AppTheme.buttonIconDefault,),
                 SizedBox(height: AppDimens.height40,),
-                TextFieldCustom(hint: "email", textInputType: TextInputType.emailAddress, textInputAction: TextInputAction.next,),
+                TextFieldCustomLogin(hint: "email", textInputType: TextInputType.emailAddress, textInputAction: TextInputAction.next,),
                 SizedBox(height: AppDimens.height20,),
-                TextFieldCustom(hint: "password", textInputType: TextInputType.text, isPassword: true, textInputAction: TextInputAction.next),
+                TextFieldCustomLogin(hint: "password", textInputType: TextInputType.text, isPassword: true, textInputAction: TextInputAction.next),
                 SizedBox(height: AppDimens.height20,),
-                TextFieldCustom(hint: "username", textInputType: TextInputType.text),
+                TextFieldCustomLogin(hint: "username", textInputType: TextInputType.text),
                 SizedBox(height: AppDimens.height50,),
                 Row(
                   children: [

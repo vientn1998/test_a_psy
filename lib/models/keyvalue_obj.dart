@@ -5,11 +5,15 @@ class KeyValueObj {
 
   //local
   String pathImage;
+  double height = 0.0;
+  double width = 0.0;
 
   KeyValueObj({
     this.key,
     this.value,
     this.pathImage,
+    this.height,
+    this.width,
   });
 
   factory KeyValueObj.fromJson(Map<String, dynamic> json){

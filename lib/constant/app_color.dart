@@ -10,5 +10,6 @@ class AppColors {
   static const text = Color(0xFF424242);
   static const title = Color(0xFF111114);
   static const white = Colors.white;
+  static const invalid = Color(0xFF50E3C2);
   static const lineTextField = Color(0xFFF7F7F7);
 }

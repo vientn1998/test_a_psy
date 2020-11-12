@@ -48,9 +48,9 @@ class _LoginScreenState extends State<LoginScreen> with AfterLayoutMixin{
                 SizedBox(height: AppDimens.height40,),
                 Text("or", style: AppTheme.buttonIconDefault,),
                 SizedBox(height: AppDimens.height40,),
-                TextFieldCustom(hint: "email", textInputType: TextInputType.emailAddress, textInputAction: TextInputAction.next,),
+                TextFieldCustomLogin(hint: "email", textInputType: TextInputType.emailAddress, textInputAction: TextInputAction.next,),
                 SizedBox(height: AppDimens.height20,),
-                TextFieldCustom(hint: "password", textInputType: TextInputType.text, isPassword: true),
+                TextFieldCustomLogin(hint: "password", textInputType: TextInputType.text, isPassword: true),
                 SizedBox(height: AppDimens.height50,),
                 Row(
                   children: [
