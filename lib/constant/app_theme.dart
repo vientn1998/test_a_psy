@@ -87,6 +87,12 @@ class AppTheme {
     color: AppColors.white,
   );
 
+  static const TextStyle text16Bold = TextStyle(
+    fontFamily: FontFamily.bold,
+    fontSize: 16,
+    color: AppColors.text,
+  );
+
   static const TextStyle text16MediumTitle = TextStyle(
     fontFamily: FontFamily.medium,
     fontSize: 16,
@@ -97,6 +103,12 @@ class AppTheme {
     fontFamily: FontFamily.medium,
     fontSize: 26,
     color: AppColors.white,
+  );
+
+  static const TextStyle text20Bold = TextStyle(
+    fontFamily: FontFamily.bold,
+    fontSize: 20,
+    color: AppColors.text,
   );
 
   static const TextStyle textTextFieldPinCOde = TextStyle(

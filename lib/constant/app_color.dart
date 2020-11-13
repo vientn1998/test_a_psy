@@ -12,4 +12,5 @@ class AppColors {
   static const white = Colors.white;
   static const invalid = Color(0xFF50E3C2);
   static const lineTextField = Color(0xFFF7F7F7);
+  static const backgroundBtnEditAvatar = Color(0xFFCFCFCF);
 }

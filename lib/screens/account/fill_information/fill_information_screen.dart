@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shapee_project/screens/account/congratulation/congratulation_screen.dart';
 import '../../../app/import_file_common.dart';
 import '../../../widgets/text_field.dart';
+import 'widgets/avatar_edit.dart';
 
 class FillInformation extends StatefulWidget {
   @override
@@ -20,7 +22,9 @@ class _FillInformationState extends State<FillInformation> {
           actionBack: () {
             Get.back();
           },
-          actionRight: () {}),
+          actionRight: () {
+            Get.to(CongratulationScreen());
+          }),
       body: Center(
         child: SingleChildScrollView(
           child: Padding(
@@ -29,6 +33,9 @@ class _FillInformationState extends State<FillInformation> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
+                SizedBox(height: 60,),
+                AvatarEdit(),
+                SizedBox(height: 50,),
                 Row(
                   children: [
                     Expanded(
@@ -128,6 +135,9 @@ class _FillInformationState extends State<FillInformation> {
                 Text(
                   '*We won’t call unless there is an issue with your account. We never share your personal info with anyone!',
                   style: AppTheme.text10RegularWhite,
+                ),
+                SizedBox(
+                  height: 20,
                 ),
               ],
             ),

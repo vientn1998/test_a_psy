@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:shapee_project/constant/app_color.dart';
 import 'package:shapee_project/constant/app_dimen.dart';
 import 'package:shapee_project/constant/app_theme.dart';
+import 'package:shapee_project/screens/home/home_screen.dart';
 import 'package:shapee_project/widgets/app_bar.dart';
 import 'package:shapee_project/widgets/button.dart';
 import 'package:shapee_project/widgets/text_field.dart';
@@ -19,10 +20,6 @@ class _LoginScreenState extends State<LoginScreen> with AfterLayoutMixin{
   @override
   void initState() {
     super.initState();
-    // AppTheme.setUpStatusBar();
-    setState(() {
-      
-    });
   }
 
   @override
@@ -55,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> with AfterLayoutMixin{
                 Row(
                   children: [
                     Expanded(child: ButtonCustom(title: "Sign in", onPressed: () {
-
+                      Get.offAll(HomeScreen());
                     },)),
                   ],
                 ),
@@ -68,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> with AfterLayoutMixin{
                         child: Text("Forgot password?", style: AppTheme.text13RegularWhite,),
                       ),
                       onTap: () {
-                        print("test");
+
                       },
                       radius: AppDimens.borderRadiusBtn,
                     ),
