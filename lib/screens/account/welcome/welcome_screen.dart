@@ -5,8 +5,8 @@ import 'package:shapee_project/screens/account/login/login_screen.dart';
 import 'package:shapee_project/screens/account/register/register_screen.dart';
 import 'package:shapee_project/utils/string_utils.dart';
 import '../../../app/import_file_common.dart';
-class WelcomeScreen extends StatelessWidget{
 
+class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (!AppConstant().isFlatFormAndroid) {
@@ -32,7 +32,9 @@ class WelcomeScreen extends StatelessWidget{
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(StringUtils.getUrlAssets("ic_logo_welcome")),
-                  SizedBox(height: AppDimens.heightButton,),
+                  SizedBox(
+                    height: AppDimens.heightButton,
+                  ),
                   _widgetBtn("GET STARTED", false),
                   _widgetBtn("Login", true),
                 ],
@@ -65,7 +67,7 @@ class WelcomeScreen extends StatelessWidget{
                 style: TextStyle(
                     color: isLogin ? AppColors.text : Colors.white,
                     fontSize: 15,
-                    fontFamily: FontFamily.bold),
+                    fontWeight: FontWeight.bold),
               ),
               elevation: 0,
               color: isLogin ? Colors.white : AppColors.primary,

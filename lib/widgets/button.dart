@@ -6,9 +6,9 @@ import 'package:shapee_project/constant/app_theme.dart';
 import 'package:shapee_project/utils/string_utils.dart';
 
 class ButtonCustom extends StatelessWidget {
+  const ButtonCustom({this.title, this.onPressed});
   final String title;
-  Function onPressed;
-  ButtonCustom({this.title, this.onPressed});
+  final Function onPressed;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,26 +30,25 @@ class ButtonCustom extends StatelessWidget {
 }
 
 class ButtonIconCustom extends StatelessWidget {
-
-  String title;
-  ButtonIconCustom({this.title});
+  const ButtonIconCustom({this.title});
+  final String title;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: AppDimens.heightButton,
       child: RaisedButton(
-        onPressed: () {
-
-        },
+        onPressed: () {},
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppDimens.borderRadiusBtn),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadiusBtn),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(StringUtils.getUrlAssets(AppImage.fb_btn)),
-            SizedBox(width: 10,),
+            SizedBox(
+              width: 10,
+            ),
             Text(
               title,
               style: AppTheme.buttonIconDefault,

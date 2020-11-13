@@ -15,33 +15,45 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.primary,
-      appBar: widgetAppBarText(title: getTranslated(context, ENTER_EMAIL), titleRight: getTranslated(context, NEXT), isHiddenRight: false, actionBack: () {
-        Get.back();
-      }, actionRight: () {
-        FocusScope.of(context).unfocus();
-        Get.to(ConfirmEmailScreen());
-      }),
+      appBar: widgetAppBarText(
+          title: getTranslated(context, ENTER_EMAIL),
+          titleRight: getTranslated(context, NEXT),
+          isHiddenRight: false,
+          actionBack: () {
+            Get.back();
+          },
+          actionRight: () {
+            FocusScope.of(context).unfocus();
+            Get.to(ConfirmEmailScreen());
+          }),
       body: Center(
         child: Padding(
           padding:
               const EdgeInsets.symmetric(horizontal: AppDimens.paddingDefault),
           child: Column(
             children: [
-              SizedBox(height: 60,),
+              SizedBox(
+                height: 60,
+              ),
               Text(
                 getTranslated(context, ENTER_YOUR_EMAIL),
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontFamily: FontFamily.regular,
-                    fontSize: 25,
-                    color: AppColors.white),
+                style: TextStyle(fontSize: 25, color: AppColors.white),
               ),
-              SizedBox(height: 20,),
-              Text(getTranslated(context, SENT_PASSCODE_YOUR_EMAIL),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                getTranslated(context, SENT_PASSCODE_YOUR_EMAIL),
                 textAlign: TextAlign.center,
-                style: AppTheme.text16RegularWhite,),
-              SizedBox(height: 40,),
-              TextFileEmailCustom(hint: getTranslated(context, ENTER),),
+                style: AppTheme.text16RegularWhite,
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              TextFileEmailCustom(
+                hint: getTranslated(context, ENTER),
+              ),
             ],
           ),
         ),

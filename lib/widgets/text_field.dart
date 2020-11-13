@@ -3,19 +3,16 @@ import 'package:shapee_project/app/import_file_common.dart';
 import 'package:shapee_project/constant/app_color.dart';
 import 'package:shapee_project/constant/app_theme.dart';
 
-import '../utils/string_utils.dart';
-
 class TextFieldCustomLogin extends StatefulWidget {
-  final String hint;
-  TextInputType textInputType;
-  TextInputAction textInputAction;
-  bool isPassword = false;
-
   TextFieldCustomLogin(
       {this.hint,
       this.textInputType = TextInputType.text,
       this.isPassword = false,
       this.textInputAction = TextInputAction.done});
+  final String hint;
+  final TextInputType textInputType;
+  final TextInputAction textInputAction;
+  final bool isPassword;
 
   @override
   _TextFieldCustomLoginState createState() => _TextFieldCustomLoginState();
@@ -46,14 +43,13 @@ class _TextFieldCustomLoginState extends State<TextFieldCustomLogin> {
 }
 
 class TextFieldCustom extends StatefulWidget {
-  final String hint;
-  TextInputType textInputType;
-  TextInputAction textInputAction;
-
   TextFieldCustom(
       {this.hint,
       this.textInputType = TextInputType.text,
       this.textInputAction = TextInputAction.done});
+  final String hint;
+  final TextInputType textInputType;
+  final TextInputAction textInputAction;
 
   @override
   _TextFieldCustomState createState() => _TextFieldCustomState();
@@ -83,27 +79,25 @@ class _TextFieldCustomState extends State<TextFieldCustom> {
 }
 
 class TextFieldCustomChoose extends StatefulWidget {
-  final String title;
-  TextInputType textInputType;
-  TextInputAction textInputAction;
-  IconData iconRight;
-  double sizeIconRight;
-  Function onTap;
-
   TextFieldCustomChoose(
       {this.title,
       this.textInputType = TextInputType.text,
-        this.iconRight = Icons.keyboard_arrow_down,
-        this.sizeIconRight = 20,
-        this.onTap,
+      this.iconRight = Icons.keyboard_arrow_down,
+      this.sizeIconRight = 20,
+      this.onTap,
       this.textInputAction = TextInputAction.done});
+  final String title;
+  final TextInputType textInputType;
+  final TextInputAction textInputAction;
+  final IconData iconRight;
+  final double sizeIconRight;
+  final Function onTap;
 
   @override
   _TextFieldCustomChooseState createState() => _TextFieldCustomChooseState();
 }
 
 class _TextFieldCustomChooseState extends State<TextFieldCustomChoose> {
-
   TextEditingController _textEditingController;
 
   @override
@@ -127,20 +121,21 @@ class _TextFieldCustomChooseState extends State<TextFieldCustomChoose> {
           decoration: InputDecoration(
             enabledBorder: UnderlineInputBorder(
                 borderSide:
-                BorderSide(color: AppColors.lineTextField, width: 1)),
+                    BorderSide(color: AppColors.lineTextField, width: 1)),
             disabledBorder: UnderlineInputBorder(
                 borderSide:
-                BorderSide(color: AppColors.lineTextField, width: 1)),
+                    BorderSide(color: AppColors.lineTextField, width: 1)),
             focusedBorder: UnderlineInputBorder(
                 borderSide:
-                BorderSide(color: AppColors.lineTextField, width: 2)),
+                    BorderSide(color: AppColors.lineTextField, width: 2)),
             contentPadding: EdgeInsets.only(bottom: 14),
-            suffixIconConstraints:BoxConstraints(minWidth: 20, maxHeight: 20),
+            suffixIconConstraints: BoxConstraints(minWidth: 20, maxHeight: 20),
             suffixIcon: Icon(
               widget.iconRight,
               color: AppColors.lineTextField,
               size: widget.sizeIconRight,
-            ),),
+            ),
+          ),
         ),
       ),
       onTap: widget.onTap,

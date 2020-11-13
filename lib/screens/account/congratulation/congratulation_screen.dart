@@ -17,41 +17,57 @@ class _CongratulationScreenState extends State<CongratulationScreen> {
       body: SafeArea(
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: AppDimens.paddingDefault),
+            padding: const EdgeInsets.symmetric(
+                horizontal: AppDimens.paddingDefault),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                SizedBox(height: sizeDevice.height / 11,),
-                Image.asset(StringUtils.getUrlAssets(AppImage.air_balloon), width: sizeDevice.width - 32, height: sizeDevice.height / 3.4, fit: BoxFit.fill,),
-                Expanded(child:Column(
-
+                SizedBox(
+                  height: sizeDevice.height / 11,
+                ),
+                Image.asset(
+                  StringUtils.getUrlAssets(AppImage.air_balloon),
+                  width: sizeDevice.width - 32,
+                  height: sizeDevice.height / 3.4,
+                  fit: BoxFit.fill,
+                ),
+                Expanded(
+                    child: Column(
                   children: [
-                    SizedBox(height: sizeDevice.height / 8.5,),
+                    SizedBox(
+                      height: sizeDevice.height / 8.5,
+                    ),
                     Text(
                       getTranslated(context, CONGRATULATION),
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          fontFamily: FontFamily.bold,
+                          fontWeight: FontWeight.bold,
                           fontSize: 26,
                           color: AppColors.white),
                     ),
-                    SizedBox(height: sizeDevice.height / 20,),
-                    Text(getTranslated(context, CONGRATULATION_CONTENT_TESTER),
+                    SizedBox(
+                      height: sizeDevice.height / 20,
+                    ),
+                    Text(
+                      getTranslated(context, CONGRATULATION_CONTENT_TESTER),
                       textAlign: TextAlign.center,
-                      style: AppTheme.text16RegularWhite,),
-
+                      style: AppTheme.text16RegularWhite,
+                    ),
                   ],
                 )),
                 Row(
                   children: [
                     Expanded(
-                      child: ButtonCustom(title: getTranslated(context, NEXT),onPressed: () {
-
-                      },),
+                      child: ButtonCustom(
+                        title: getTranslated(context, NEXT),
+                        onPressed: () {},
+                      ),
                     ),
                   ],
                 ),
-                SizedBox(height: sizeDevice.height / 11,),
+                SizedBox(
+                  height: sizeDevice.height / 11,
+                ),
               ],
             ),
           ),

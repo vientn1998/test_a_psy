@@ -14,8 +14,7 @@ class IntroScreen extends StatefulWidget {
   _IntroScreenState createState() => _IntroScreenState();
 }
 
-class _IntroScreenState extends State<IntroScreen> with AfterLayoutMixin{
-
+class _IntroScreenState extends State<IntroScreen> with AfterLayoutMixin {
   List<KeyValueObj> slides = new List();
   final _pageController = PageController();
   final _currentPageNotifier = ValueNotifier<int>(0);
@@ -35,9 +34,7 @@ class _IntroScreenState extends State<IntroScreen> with AfterLayoutMixin{
   }
 
   @override
-  void afterFirstLayout(BuildContext context) {
-
-  }
+  void afterFirstLayout(BuildContext context) {}
 
   @override
   Widget build(BuildContext context) {
@@ -48,26 +45,22 @@ class _IntroScreenState extends State<IntroScreen> with AfterLayoutMixin{
             value: getTranslated(context, INTRO1),
             pathImage: StringUtils.getUrlAssets(AppImage.image1),
             height: 189,
-            width: 284
-        ),
+            width: 284),
         KeyValueObj(
             value: getTranslated(context, INTRO2),
             pathImage: StringUtils.getUrlAssets(AppImage.image2),
             height: 282,
-            width: 275
-        ),
+            width: 275),
         KeyValueObj(
             value: getTranslated(context, INTRO3),
             pathImage: StringUtils.getUrlAssets(AppImage.image3),
             height: 312,
-            width: 312
-        ),
-        new KeyValueObj(
+            width: 312),
+        KeyValueObj(
             value: getTranslated(context, INTRO4),
             pathImage: StringUtils.getUrlAssets(AppImage.image4),
             height: 232,
-            width: 312
-        ),
+            width: 312),
       ]);
       isFirstBuild = false;
     }
@@ -89,13 +82,14 @@ class _IntroScreenState extends State<IntroScreen> with AfterLayoutMixin{
       top: 40,
       child: InkWell(
         child: Container(
-          decoration: BoxDecoration(
-              shape: BoxShape.circle
-          ),
+          decoration: BoxDecoration(shape: BoxShape.circle),
           child: Padding(
             padding: const EdgeInsets.all(4.0),
             child: Text(
-              _currentPageNotifier.value == 3 ? getTranslated(context, DONE) : "", style: AppTheme.text15Bold,
+              _currentPageNotifier.value == 3
+                  ? getTranslated(context, DONE)
+                  : "",
+              style: AppTheme.text15Bold,
             ),
           ),
         ),
@@ -129,7 +123,8 @@ class _IntroScreenState extends State<IntroScreen> with AfterLayoutMixin{
                   height: sizeDevice.height / 6,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: AppDimens.paddingDefault),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: AppDimens.paddingDefault),
                   child: Text(
                     item.value,
                     style: AppTheme.textDesIntro,
@@ -166,14 +161,17 @@ class _IntroScreenState extends State<IntroScreen> with AfterLayoutMixin{
               size: const Size.square(11.0),
               activeSize: const Size.square(11.0),
               activeShape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5.5), side: BorderSide(
-                color: Colors.white,
-                width: 1,)),
+                  borderRadius: BorderRadius.circular(5.5),
+                  side: BorderSide(
+                    color: Colors.white,
+                    width: 1,
+                  )),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5.5),
                   side: BorderSide(
                     color: Colors.white,
-                    width: 1,))),
+                    width: 1,
+                  ))),
         ),
       ),
     );

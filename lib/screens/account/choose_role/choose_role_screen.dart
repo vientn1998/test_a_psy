@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shapee_project/constant/app_color.dart';
 import 'package:shapee_project/constant/app_dimen.dart';
-import 'package:shapee_project/constant/app_font.dart';
 import 'package:shapee_project/constant/app_theme.dart';
 import 'package:shapee_project/extensions/string_extension.dart';
 import 'package:shapee_project/screens/account/change_password/email_enter_screen.dart';
@@ -21,26 +20,29 @@ class ChooseRoleScreen extends StatelessWidget {
           children: [
             Expanded(
                 child: Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    getTranslated(context, CHOOSE_YOUR_ROLE),
+                    style: TextStyle(fontSize: 25, color: AppColors.white),
+                  ),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  Row(
                     children: [
-                      Text(getTranslated(context, CHOOSE_YOUR_ROLE), style: TextStyle(
-                        fontFamily: FontFamily.regular,
-                        fontSize: 25,
-                        color: AppColors.white
-                      ),),
-                      SizedBox(height: 50,),
-                      Row(
-                        children: [
-                          _buildBtnReader(context),
-                          SizedBox(width: AppDimens.paddingDefault,),
-                          _buildBtnTester(context),
-                        ],
-                      )
+                      _buildBtnReader(context),
+                      SizedBox(
+                        width: AppDimens.paddingDefault,
+                      ),
+                      _buildBtnTester(context),
                     ],
-            ),
-                )),
+                  )
+                ],
+              ),
+            )),
             Text(
               getTranslated(context, PRESENT_CHOOSE_ROLE),
               style: AppTheme.text13RegularWhite,
