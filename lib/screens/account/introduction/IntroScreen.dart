@@ -1,7 +1,6 @@
 import 'package:after_layout/after_layout.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:shapee_project/constant/app_color.dart';
 import 'package:shapee_project/constant/app_dimen.dart';
@@ -59,6 +58,11 @@ class _IntroScreenState extends State<IntroScreen> with AfterLayoutMixin{
           width: 312
       ),
     );
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
   }
 
   @override
