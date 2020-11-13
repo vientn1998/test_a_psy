@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shapee_project/constant/app_constant.dart';
+import 'package:shapee_project/constant/app_image.dart';
 import 'package:shapee_project/utils/constant.dart';
 import 'package:shapee_project/utils/string_utils.dart';
 import '../../../../app/import_file_common.dart';
@@ -18,9 +20,9 @@ class _AvatarEditState extends State<AvatarEdit> {
             padding: const EdgeInsets.all(AppDimens.paddingDefault),
             child: Container(
                 child: Image.asset(
-                  StringUtils.getUrlAssets('avatar_default'),
-                  width: sizeDevice.width / 2.9,
-                  height: sizeDevice.height / 6,
+                  StringUtils.getUrlAssets(AppImage.avatar_default),
+                  width: sizeDevice.width / 3.2,
+                  height: AppConstant().isFlatFormAndroid ? sizeDevice.height / 6.9 : sizeDevice.height / 6,
                   fit: BoxFit.fill,
                 )),
           ),
@@ -39,10 +41,11 @@ class _AvatarEditState extends State<AvatarEdit> {
         ),
         child: InkWell(
           child: Padding(
-            padding: const EdgeInsets.all(7.0),
+            padding: const EdgeInsets.all(8.0),
             child: Icon(
               Icons.edit,
               color: AppColors.white,
+              size: 20,
             ),
           ),
           onTap: () {

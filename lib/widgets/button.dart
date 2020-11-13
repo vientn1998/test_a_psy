@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shapee_project/constant/app_color.dart';
 import 'package:shapee_project/constant/app_dimen.dart';
+import 'package:shapee_project/constant/app_image.dart';
 import 'package:shapee_project/constant/app_theme.dart';
 import 'package:shapee_project/utils/string_utils.dart';
 
@@ -47,7 +48,7 @@ class ButtonIconCustom extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(StringUtils.getUrlAssets("fb_btn")),
+            Image.asset(StringUtils.getUrlAssets(AppImage.fb_btn)),
             SizedBox(width: 10,),
             Text(
               title,

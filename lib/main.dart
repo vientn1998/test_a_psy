@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -7,6 +9,7 @@ import 'package:shapee_project/app/app_routes.dart';
 import 'package:shapee_project/app/constants_enviroment.dart';
 import 'package:shapee_project/app/get_it.dart';
 import 'package:shapee_project/constant/app_color.dart';
+import 'package:shapee_project/constant/app_constant.dart';
 import 'package:shapee_project/constant/app_theme.dart';
 import 'package:shapee_project/localization/app_localization.dart';
 import 'package:shapee_project/providers/account/account_provider.dart';
@@ -34,6 +37,12 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _locale = locale;
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    AppConstant().isFlatFormAndroid = Platform.isAndroid;
   }
 
   @override

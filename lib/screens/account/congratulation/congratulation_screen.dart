@@ -22,7 +22,7 @@ class _CongratulationScreenState extends State<CongratulationScreen> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 SizedBox(height: sizeDevice.height / 11,),
-                Image.asset(StringUtils.getUrlAssets('air_balloon'), width: sizeDevice.width - 32, height: sizeDevice.height / 3.4, fit: BoxFit.fill,),
+                Image.asset(StringUtils.getUrlAssets(AppImage.air_balloon), width: sizeDevice.width - 32, height: sizeDevice.height / 3.4, fit: BoxFit.fill,),
                 Expanded(child:Column(
 
                   children: [

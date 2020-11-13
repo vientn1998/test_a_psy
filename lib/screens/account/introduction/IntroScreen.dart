@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:shapee_project/constant/app_color.dart';
 import 'package:shapee_project/constant/app_dimen.dart';
+import 'package:shapee_project/constant/app_image.dart';
 import 'package:shapee_project/constant/app_theme.dart';
 import 'package:shapee_project/models/keyvalue_obj.dart';
 import 'package:shapee_project/screens/account/welcome/welcome_screen.dart';
@@ -29,7 +30,7 @@ class _IntroScreenState extends State<IntroScreen> with AfterLayoutMixin{
     slides.add(
       new KeyValueObj(
         value: 'Test a Psychic’s intuitive “testing” platform allows both Clients & Reader/Advisors to interact with each other in order to test the Reader’s abilities.',
-        pathImage: StringUtils.getUrlAssets("image1"),
+        pathImage: StringUtils.getUrlAssets(AppImage.image1),
         height: 189,
         width: 284
       ),
@@ -37,15 +38,15 @@ class _IntroScreenState extends State<IntroScreen> with AfterLayoutMixin{
     slides.add(
       new KeyValueObj(
           value: 'Readings can take place in any of 4 different platforms of your choice: CHAT, PHONE, EMAIL or SMS.',
-          pathImage: StringUtils.getUrlAssets("image2"),
-          height: 182,
+          pathImage: StringUtils.getUrlAssets(AppImage.image2),
+          height: 282,
           width: 275
       ),
     );
     slides.add(
       new KeyValueObj(
           value: 'Test a Psychic’s intuitive “testing” platform allows both Clients & Reader/Advisors to interact with each other in order to test the Reader’s abilities.',
-          pathImage: StringUtils.getUrlAssets("image3"),
+          pathImage: StringUtils.getUrlAssets(AppImage.image3),
           height: 312,
           width: 312
       ),
@@ -53,7 +54,7 @@ class _IntroScreenState extends State<IntroScreen> with AfterLayoutMixin{
     slides.add(
       new KeyValueObj(
           value: 'With a variety of reading methods: Clairvoyance, Tarot, Medium, Astrology, Life Coaching etc.',
-          pathImage: StringUtils.getUrlAssets("image4"),
+          pathImage: StringUtils.getUrlAssets(AppImage.image4),
           height: 232,
           width: 312
       ),

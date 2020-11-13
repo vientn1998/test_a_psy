@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:shapee_project/constant/app_color.dart';
 import 'package:shapee_project/constant/app_dimen.dart';
 import 'package:shapee_project/constant/app_font.dart';
+import 'package:shapee_project/constant/app_image.dart';
 import 'package:shapee_project/constant/app_theme.dart';
 import 'package:shapee_project/screens/account/login/login_screen.dart';
 import 'package:shapee_project/screens/account/register/register_screen.dart';
@@ -20,7 +21,7 @@ class WelcomeScreen extends StatelessWidget{
       body: Stack(
         children: [
           Image.asset(
-            StringUtils.getUrlAssets("background_welcome"),
+            StringUtils.getUrlAssets(AppImage.background_welcome),
             height: double.infinity,
             width: double.infinity,
             fit: BoxFit.fill,
