@@ -5,8 +5,9 @@ import '../../../../constant/app_theme.dart';
 
 class TextFileEmailCustom extends StatefulWidget {
 
-  TextFileEmailCustom({this.isPassword = false});
+  TextFileEmailCustom({this.isPassword = false, this.hint = 'enter'});
   bool isPassword;
+  String hint;
 
   @override
   _TextFileEmailCustomState createState() => _TextFileEmailCustomState();
@@ -28,7 +29,7 @@ class _TextFileEmailCustomState extends State<TextFileEmailCustom> {
             focusedBorder: UnderlineInputBorder(
                 borderSide: BorderSide(color: AppColors.lineTextField, width: 2)),
             contentPadding: EdgeInsets.symmetric(horizontal: 10),
-            hintText: widget.isPassword ? 'enter' : 'enter',
+            hintText: widget.hint,
             hintStyle: AppTheme.text26MediumHint),
       ),
     );

@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shapee_project/screens/account/confirm_email/confirm_email_screen.dart';
-
-import '../../../constant/app_color.dart';
-import '../../../constant/app_dimen.dart';
-import '../../../constant/app_font.dart';
-import '../../../constant/app_theme.dart';
 import '../../../widgets/app_bar.dart';
 import 'confirm_password_screen.dart';
 import 'widgets/text_field_email.dart';
+import '../../../app/import_file_common.dart';
 
 class NewPasswordScreen extends StatefulWidget {
   @override
@@ -20,7 +16,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.primary,
-      appBar: widgetAppBarText(title: 'New password', titleRight: 'Next', isHiddenRight: false, actionBack: () {
+      appBar: widgetAppBarText(title: getTranslated(context, NEW_PASSWORD), titleRight: getTranslated(context, NEXT), isHiddenRight: false, actionBack: () {
         Get.back();
       }, actionRight: () {
         FocusScope.of(context).unfocus();
@@ -34,7 +30,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
             children: [
               SizedBox(height: 60,),
               Text(
-                'ENTER NEW PASSWORD',
+                getTranslated(context, ENTER_NEW_PASSWORD),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontFamily: FontFamily.regular,
@@ -42,11 +38,11 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                     color: AppColors.white),
               ),
               SizedBox(height: 20,),
-              Text('Password should be more than 6 characters and without spaces.',
+              Text(getTranslated(context, PASSWORD_REQUIRED),
                 textAlign: TextAlign.center,
                 style: AppTheme.text16RegularWhite,),
               SizedBox(height: 40,),
-              TextFileEmailCustom(isPassword: true,),
+              TextFileEmailCustom(isPassword: true, hint: getTranslated(context, ENTER),),
             ],
           ),
         ),

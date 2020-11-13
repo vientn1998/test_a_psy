@@ -4,6 +4,7 @@ import 'package:shapee_project/constant/app_color.dart';
 import 'package:shapee_project/constant/app_dimen.dart';
 import 'package:shapee_project/constant/app_font.dart';
 import 'package:shapee_project/constant/app_theme.dart';
+import 'package:shapee_project/extensions/string_extension.dart';
 import 'package:shapee_project/screens/account/change_password/email_enter_screen.dart';
 import 'package:shapee_project/screens/account/fill_information/fill_information_screen.dart';
 
@@ -24,7 +25,7 @@ class ChooseRoleScreen extends StatelessWidget {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('CHOOSE YOUR ROLE', style: TextStyle(
+                      Text(getTranslated(context, CHOOSE_YOUR_ROLE), style: TextStyle(
                         fontFamily: FontFamily.regular,
                         fontSize: 25,
                         color: AppColors.white
@@ -32,16 +33,16 @@ class ChooseRoleScreen extends StatelessWidget {
                       SizedBox(height: 50,),
                       Row(
                         children: [
-                          _buildBtnReader(),
+                          _buildBtnReader(context),
                           SizedBox(width: AppDimens.paddingDefault,),
-                          _buildBtnTester(),
+                          _buildBtnTester(context),
                         ],
                       )
                     ],
             ),
                 )),
             Text(
-              'Full instructions will be presented throughout the entire testing process.',
+              getTranslated(context, PRESENT_CHOOSE_ROLE),
               style: AppTheme.text13RegularWhite,
               textAlign: TextAlign.center,
             ),
@@ -54,7 +55,7 @@ class ChooseRoleScreen extends StatelessWidget {
     );
   }
 
-  _buildBtnReader() {
+  _buildBtnReader(BuildContext context) {
     return Expanded(
       child: Container(
         height: AppDimens.heightButton,
@@ -66,7 +67,7 @@ class ChooseRoleScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(AppDimens.borderRadiusBtn),
           ),
           child: Text(
-            'Reader',
+            getTranslated(context, READER),
             style: AppTheme.text15Bold,
           ),
           elevation: 0,
@@ -76,7 +77,7 @@ class ChooseRoleScreen extends StatelessWidget {
     );
   }
 
-  _buildBtnTester() {
+  _buildBtnTester(BuildContext context) {
     return Expanded(
       child: Container(
         height: AppDimens.heightButton,
@@ -92,7 +93,7 @@ class ChooseRoleScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(AppDimens.borderRadiusBtn),
           ),
           child: Text(
-            'Tester',
+            getTranslated(context, TESTER),
             style: AppTheme.text15Bold,
           ),
           elevation: 0,

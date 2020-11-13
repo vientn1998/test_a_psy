@@ -2,6 +2,7 @@ import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:shapee_project/app/import_file_common.dart';
 import 'package:shapee_project/constant/app_color.dart';
 import 'package:shapee_project/constant/app_dimen.dart';
 import 'package:shapee_project/constant/app_theme.dart';
@@ -39,19 +40,19 @@ class _LoginScreenState extends State<LoginScreen> with AfterLayoutMixin{
                 SizedBox(height: AppDimens.height20,),
                 Row(
                   children: [
-                    Expanded(child: ButtonIconCustom(title: "Login with Facebook",)),
+                    Expanded(child: ButtonIconCustom(title: getTranslated(context, LOGIN_WITH_FB),)),
                   ],
                 ),
                 SizedBox(height: AppDimens.height40,),
                 Text("or", style: AppTheme.buttonIconDefault,),
                 SizedBox(height: AppDimens.height40,),
-                TextFieldCustomLogin(hint: "email", textInputType: TextInputType.emailAddress, textInputAction: TextInputAction.next,),
+                TextFieldCustomLogin(hint: getTranslated(context, EMAIL), textInputType: TextInputType.emailAddress, textInputAction: TextInputAction.next,),
                 SizedBox(height: AppDimens.height20,),
-                TextFieldCustomLogin(hint: "password", textInputType: TextInputType.text, isPassword: true),
+                TextFieldCustomLogin(hint: getTranslated(context, PASSWORD), textInputType: TextInputType.text, isPassword: true),
                 SizedBox(height: AppDimens.height50,),
                 Row(
                   children: [
-                    Expanded(child: ButtonCustom(title: "Sign in", onPressed: () {
+                    Expanded(child: ButtonCustom(title: getTranslated(context, SIGN_IN), onPressed: () {
                       Get.offAll(HomeScreen());
                     },)),
                   ],
@@ -62,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> with AfterLayoutMixin{
                     InkWell(
                       child: Padding(
                         padding: const EdgeInsets.only(right: 5, top: 5, bottom: 5),
-                        child: Text("Forgot password?", style: AppTheme.text13RegularWhite,),
+                        child: Text(getTranslated(context, FORGOT_PASSWORD), style: AppTheme.text13RegularWhite,),
                       ),
                       onTap: () {
 
@@ -77,6 +78,10 @@ class _LoginScreenState extends State<LoginScreen> with AfterLayoutMixin{
         ),
       ),
     );
+  }
+
+  bool isValide() {
+    return true;
   }
 
   @override

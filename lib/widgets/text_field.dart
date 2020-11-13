@@ -86,10 +86,16 @@ class TextFieldCustomChoose extends StatefulWidget {
   final String title;
   TextInputType textInputType;
   TextInputAction textInputAction;
+  IconData iconRight;
+  double sizeIconRight;
+  Function onTap;
 
   TextFieldCustomChoose(
       {this.title,
       this.textInputType = TextInputType.text,
+        this.iconRight = Icons.keyboard_arrow_down,
+        this.sizeIconRight = 20,
+        this.onTap,
       this.textInputAction = TextInputAction.done});
 
   @override
@@ -102,40 +108,42 @@ class _TextFieldCustomChooseState extends State<TextFieldCustomChoose> {
 
   @override
   void initState() {
-    _textEditingController = TextEditingController(text: widget.title);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: TextField(
-        style: AppTheme.text15RegularWhite,
-        keyboardType: widget.textInputType,
-        enabled: false,
-        textAlign: TextAlign.start,
-        textAlignVertical: TextAlignVertical.center,
-        textInputAction: widget.textInputAction,
-        controller: _textEditingController,
-        decoration: InputDecoration(
+    _textEditingController = TextEditingController(text: widget.title);
+    return InkWell(
+      child: Container(
+        child: TextField(
+          style: AppTheme.text15RegularWhite,
+          keyboardType: widget.textInputType,
+          enabled: false,
+          textAlign: TextAlign.start,
+          textAlignVertical: TextAlignVertical.center,
+          textInputAction: widget.textInputAction,
+          controller: _textEditingController,
+          decoration: InputDecoration(
             enabledBorder: UnderlineInputBorder(
                 borderSide:
-                    BorderSide(color: AppColors.lineTextField, width: 1)),
+                BorderSide(color: AppColors.lineTextField, width: 1)),
             disabledBorder: UnderlineInputBorder(
                 borderSide:
-                    BorderSide(color: AppColors.lineTextField, width: 1)),
+                BorderSide(color: AppColors.lineTextField, width: 1)),
             focusedBorder: UnderlineInputBorder(
                 borderSide:
-                    BorderSide(color: AppColors.lineTextField, width: 2)),
+                BorderSide(color: AppColors.lineTextField, width: 2)),
             contentPadding: EdgeInsets.only(bottom: 14),
             suffixIconConstraints:BoxConstraints(minWidth: 20, maxHeight: 20),
             suffixIcon: Icon(
-              Icons.keyboard_arrow_down,
+              widget.iconRight,
               color: AppColors.lineTextField,
-              size: 20,
+              size: widget.sizeIconRight,
             ),),
+        ),
       ),
+      onTap: widget.onTap,
     );
   }
 }
-//Icon(Icons.keyboard_arrow_down, color: AppColors.lineTextField, size: 16,)

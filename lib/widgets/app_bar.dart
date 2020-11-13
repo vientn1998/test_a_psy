@@ -20,7 +20,7 @@ Widget widgetAppBar(
   return AppBar(
     centerTitle: false,
     backgroundColor: backgroundColor,
-    brightness: Brightness.light,
+    // brightness: Brightness.light,
     elevation: elevation,
     title: Text(
       title,
@@ -75,7 +75,6 @@ Widget widgetAppBarText(
   return AppBar(
     centerTitle: false,
     backgroundColor: backgroundColor,
-    brightness: Brightness.light,
     elevation: elevation,
     title: Text(
       title,

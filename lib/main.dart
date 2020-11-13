@@ -1,9 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
+import 'package:keyboard_dismisser/keyboard_dismisser.dart';
 import 'package:provider/provider.dart';
 import 'package:shapee_project/app/app_routes.dart';
 import 'package:shapee_project/app/constants_enviroment.dart';
@@ -13,9 +13,8 @@ import 'package:shapee_project/constant/app_constant.dart';
 import 'package:shapee_project/constant/app_theme.dart';
 import 'package:shapee_project/localization/app_localization.dart';
 import 'package:shapee_project/providers/account/account_provider.dart';
-import 'package:shapee_project/screens/account/login/login_screen.dart';
 
-import 'screens/account/introduction/IntroScreen.dart';
+import 'screens/account/introduction/intro_screen.dart';
 
 void main() {
   setUpGetIt();
@@ -40,43 +39,42 @@ class _MyAppState extends State<MyApp> {
   }
 
   @override
-  void initState() {
-    super.initState();
-    AppConstant().isFlatFormAndroid = Platform.isAndroid;
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider.value(value: AccountProvider()),
-      ],
-      child: GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        locale: _locale,
-        localizationsDelegates: <LocalizationsDelegate<dynamic>>[
-          AppLocalization.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
+    AppConstant().isFlatFormAndroid = Platform.isAndroid;
+    return KeyboardDismisser(
+      gestures: [GestureType.onTap, GestureType.onPanUpdateDownDirection],
+      child: MultiProvider(
+        providers: [
+          ChangeNotifierProvider.value(value: AccountProvider()),
         ],
-        localeResolutionCallback:
-            (Locale deviceLocale, Iterable<Locale> supportedLocales) {
-          for (Locale locale in supportedLocales) {
-            if (locale.languageCode == deviceLocale.languageCode &&
-                locale.countryCode == deviceLocale.countryCode) {
-              return deviceLocale;
+        child: GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          supportedLocales: <Locale>[
+            const Locale('en', 'US'),
+          ],
+          locale: _locale,
+          localizationsDelegates: <LocalizationsDelegate<dynamic>>[
+            AppLocalization.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          localeResolutionCallback:
+              (Locale deviceLocale, Iterable<Locale> supportedLocales) {
+            for (Locale locale in supportedLocales) {
+              if (locale.languageCode == deviceLocale.languageCode &&
+                  locale.countryCode == deviceLocale.countryCode) {
+                return deviceLocale;
+              }
             }
-          }
-          return supportedLocales.first;
-        },
-        supportedLocales: <Locale>[
-          const Locale('en', 'US'),
-        ],
-        theme: AppTheme.themeData,
-        routes: Routes.routes,
-        color: AppColors.primary,
-        home: IntroScreen(),
+            return supportedLocales.first;
+          },
+          theme: AppConstant().isFlatFormAndroid ? AppTheme.themeDataAndroid : AppTheme.themeDataIOS,
+          routes: Routes.routes,
+          color: AppColors.primary,
+          // home: LoginScreen(),
+          home: IntroScreen(),
+        ),
       ),
     );
   }

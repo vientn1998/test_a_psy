@@ -12,7 +12,7 @@ class _ConfirmPasswordScreenState extends State<ConfirmPasswordScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.primary,
-      appBar: widgetAppBarText(title: 'Confirm password', titleRight: 'Done', isHiddenRight: false, actionBack: () {
+      appBar: widgetAppBarText(title: getTranslated(context, CONFIRM_PASSWORD), titleRight: getTranslated(context, DONE), isHiddenRight: false, actionBack: () {
         Get.back();
       }, actionRight: () {
         FocusScope.of(context).unfocus();
@@ -25,7 +25,7 @@ class _ConfirmPasswordScreenState extends State<ConfirmPasswordScreen> {
             children: [
               SizedBox(height: 60,),
               Text(
-                'CONFIRM NEW PASSWORD',
+                getTranslated(context, CONFIRM_NEW_PASSWORD),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontFamily: FontFamily.regular,
@@ -33,11 +33,11 @@ class _ConfirmPasswordScreenState extends State<ConfirmPasswordScreen> {
                     color: AppColors.white),
               ),
               SizedBox(height: 20,),
-              Text('Type in your new password again.',
+              Text(getTranslated(context, TYPE_PASSWORD_AGAIN),
                 textAlign: TextAlign.center,
                 style: AppTheme.text16RegularWhite,),
               SizedBox(height: 40,),
-              TextFileEmailCustom(isPassword: true,),
+              TextFileEmailCustom(isPassword: true, hint: getTranslated(context, ENTER),),
             ],
           ),
         ),

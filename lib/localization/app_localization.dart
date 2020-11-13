@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 const String LANGUAGE_CODE = 'languageCode';
 
 class AppLocalization {
+
   final Locale locale;
   AppLocalization(this.locale);
 

@@ -1,5 +1,11 @@
 class AppDimens {
-  AppDimens._();
+  static final AppDimens _appConstant = AppDimens._internal();
+
+  factory AppDimens() {
+    return _appConstant;
+  }
+
+  AppDimens._internal();
   static const double paddingDefault = 16.0;
   static const double height10 = 10.0;
   static const double height20 = 20.0;

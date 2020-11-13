@@ -6,6 +6,7 @@ import 'package:shapee_project/utils/string_utils.dart';
 import '../../../../app/import_file_common.dart';
 
 class AvatarEdit extends StatefulWidget {
+
   @override
   _AvatarEditState createState() => _AvatarEditState();
 }
@@ -49,7 +50,7 @@ class _AvatarEditState extends State<AvatarEdit> {
             ),
           ),
           onTap: () {
-            print('edit');
+            FocusScope.of(context).unfocus();
           },
         ),
       ),

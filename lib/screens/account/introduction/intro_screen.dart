@@ -2,14 +2,12 @@ import 'package:after_layout/after_layout.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shapee_project/constant/app_color.dart';
-import 'package:shapee_project/constant/app_dimen.dart';
-import 'package:shapee_project/constant/app_image.dart';
-import 'package:shapee_project/constant/app_theme.dart';
+import 'package:shapee_project/constant/app_constant.dart';
 import 'package:shapee_project/models/keyvalue_obj.dart';
 import 'package:shapee_project/screens/account/welcome/welcome_screen.dart';
 import 'package:shapee_project/utils/constant.dart';
 import 'package:shapee_project/utils/string_utils.dart';
+import '../../../app/import_file_common.dart';
 
 class IntroScreen extends StatefulWidget {
   @override
@@ -21,43 +19,14 @@ class _IntroScreenState extends State<IntroScreen> with AfterLayoutMixin{
   List<KeyValueObj> slides = new List();
   final _pageController = PageController();
   final _currentPageNotifier = ValueNotifier<int>(0);
-
+  bool isFirstBuild = true;
   @override
   void initState() {
-    AppTheme.setUpStatusBar();
+    if (!AppConstant().isFlatFormAndroid) {
+      AppTheme.setUpStatusBar();
+    }
+    slides = [];
     super.initState();
-    slides.add(
-      new KeyValueObj(
-        value: 'Test a Psychic’s intuitive “testing” platform allows both Clients & Reader/Advisors to interact with each other in order to test the Reader’s abilities.',
-        pathImage: StringUtils.getUrlAssets(AppImage.image1),
-        height: 189,
-        width: 284
-      ),
-    );
-    slides.add(
-      new KeyValueObj(
-          value: 'Readings can take place in any of 4 different platforms of your choice: CHAT, PHONE, EMAIL or SMS.',
-          pathImage: StringUtils.getUrlAssets(AppImage.image2),
-          height: 282,
-          width: 275
-      ),
-    );
-    slides.add(
-      new KeyValueObj(
-          value: 'Test a Psychic’s intuitive “testing” platform allows both Clients & Reader/Advisors to interact with each other in order to test the Reader’s abilities.',
-          pathImage: StringUtils.getUrlAssets(AppImage.image3),
-          height: 312,
-          width: 312
-      ),
-    );
-    slides.add(
-      new KeyValueObj(
-          value: 'With a variety of reading methods: Clairvoyance, Tarot, Medium, Astrology, Life Coaching etc.',
-          pathImage: StringUtils.getUrlAssets(AppImage.image4),
-          height: 232,
-          width: 312
-      ),
-    );
   }
 
   @override
@@ -73,19 +42,48 @@ class _IntroScreenState extends State<IntroScreen> with AfterLayoutMixin{
   @override
   Widget build(BuildContext context) {
     sizeDevice = MediaQuery.of(context).size;
+    if (isFirstBuild) {
+      slides.addAll([
+        KeyValueObj(
+            value: getTranslated(context, INTRO1),
+            pathImage: StringUtils.getUrlAssets(AppImage.image1),
+            height: 189,
+            width: 284
+        ),
+        KeyValueObj(
+            value: getTranslated(context, INTRO2),
+            pathImage: StringUtils.getUrlAssets(AppImage.image2),
+            height: 282,
+            width: 275
+        ),
+        KeyValueObj(
+            value: getTranslated(context, INTRO3),
+            pathImage: StringUtils.getUrlAssets(AppImage.image3),
+            height: 312,
+            width: 312
+        ),
+        new KeyValueObj(
+            value: getTranslated(context, INTRO4),
+            pathImage: StringUtils.getUrlAssets(AppImage.image4),
+            height: 232,
+            width: 312
+        ),
+      ]);
+      isFirstBuild = false;
+    }
     return Scaffold(
       backgroundColor: AppColors.primary,
       body: Stack(
         children: <Widget>[
           _buildPageView(),
           _buildCircleIndicator(),
-          _buildBtnDone()
+          _buildBtnDone(context)
         ],
       ),
     );
   }
 
-  _buildBtnDone() {
+  _buildBtnDone(BuildContext context) {
     return Positioned(
       right: 12,
       top: 40,
@@ -97,7 +95,7 @@ class _IntroScreenState extends State<IntroScreen> with AfterLayoutMixin{
           child: Padding(
             padding: const EdgeInsets.all(4.0),
             child: Text(
-              _currentPageNotifier.value == 3 ? "Done" : "", style: AppTheme.textDesIntro,
+              _currentPageNotifier.value == 3 ? getTranslated(context, DONE) : "", style: AppTheme.text15Bold,
             ),
           ),
         ),
@@ -160,7 +158,7 @@ class _IntroScreenState extends State<IntroScreen> with AfterLayoutMixin{
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: DotsIndicator(
-          dotsCount: slides.length,
+          dotsCount: slides.length ?? 0,
           position: _currentPageNotifier.value.toDouble(),
           decorator: DotsDecorator(
               color: AppColors.primary, // Inactive color

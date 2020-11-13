@@ -1,25 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shapee_project/constant/app_constant.dart';
 
 import 'app_color.dart';
 import 'app_font.dart';
 
 class AppTheme {
-  AppTheme._();
+  static final AppTheme _appConstant = AppTheme._internal();
+
+  factory AppTheme() {
+    return _appConstant;
+  }
+
+  AppTheme._internal();
 
   static setUpStatusBar() {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
-        statusBarColor: Colors.white, // Color for Android
+        statusBarColor: Colors.transparent, // Color for Android
         statusBarBrightness:
             Brightness.dark // Dark == white status bar -- for IOS.
         ));
     // SystemChrome.setEnabledSystemUIOverlays ([SystemUiOverlay.top]);
   }
 
-  static final ThemeData themeData = ThemeData(
+  static final ThemeData themeDataAndroid = ThemeData(
     primaryColor: AppColors.primary,
-    primaryColorBrightness: Brightness.light,
-    brightness: Brightness.dark,
+    brightness: Brightness.light,
+    accentColor: Colors.white,
+    cursorColor: Colors.white,
+    fontFamily: FontFamily.regular,
+  );
+
+  static final ThemeData themeDataIOS = ThemeData(
+    primaryColor: AppColors.primary,
+    backgroundColor: AppColors.primary,
+    brightness: Brightness.light,
     accentColor: Colors.white,
     cursorColor: Colors.white,
     fontFamily: FontFamily.regular,

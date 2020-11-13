@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:get/get.dart';
 import 'package:shapee_project/screens/account/congratulation/congratulation_screen.dart';
 import '../../../app/import_file_common.dart';
@@ -11,13 +12,16 @@ class FillInformation extends StatefulWidget {
 }
 
 class _FillInformationState extends State<FillInformation> {
+
+  DateTime dateOfBirthday;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.primary,
       appBar: widgetAppBarText(
-          title: 'Fill in your information',
-          titleRight: 'Next',
+          title: getTranslated(context, FILL_IN_YOUR_INFORMATION),
+          titleRight: getTranslated(context, NEXT),
           isHiddenRight: false,
           actionBack: () {
             Get.back();
@@ -40,7 +44,7 @@ class _FillInformationState extends State<FillInformation> {
                   children: [
                     Expanded(
                         child: TextFieldCustom(
-                      hint: 'first name',
+                      hint: getTranslated(context, FIRST_NAME),
                       textInputAction: TextInputAction.next,
                     )),
                     SizedBox(
@@ -48,7 +52,7 @@ class _FillInformationState extends State<FillInformation> {
                     ),
                     Expanded(
                         child: TextFieldCustom(
-                      hint: 'last name',
+                      hint: getTranslated(context, LAST_NAME),
                       textInputAction: TextInputAction.next,
                     )),
                   ],
@@ -60,7 +64,7 @@ class _FillInformationState extends State<FillInformation> {
                   children: [
                     Expanded(
                         child: TextFieldCustomChoose(
-                      title: 'gender',
+                      title: getTranslated(context, GENDER),
                       textInputAction: TextInputAction.next,
                     )),
                     SizedBox(
@@ -72,15 +76,29 @@ class _FillInformationState extends State<FillInformation> {
                 SizedBox(
                   height: 20,
                 ),
-                TextFieldCustom(
-                  hint: 'date of birthday',
+                TextFieldCustomChoose(
+                  title: dateOfBirthday == null ? getTranslated(context, DATE_OF_BIRTHDAY) : dateOfBirthday.formatDayOfBirthday(),
                   textInputAction: TextInputAction.next,
+                  iconRight: Icons.calendar_today,
+                  sizeIconRight: 16,
+                  onTap: () {
+                    DatePicker.showDatePicker(context,
+                        showTitleActions: true,
+                        minTime: DateTime(1995, 1, 1),
+                        maxTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day), onChanged: (date) {
+
+                        }, onConfirm: (date) {
+                          print('confirm $date');
+                          dateOfBirthday = date;
+                          setState(() {});
+                        }, currentTime: DateTime.now(), locale: LocaleType.en);
+                  },
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 TextFieldCustom(
-                  hint: 'home address',
+                  hint: getTranslated(context, HOME_ADDRESS),
                   textInputAction: TextInputAction.next,
                 ),
                 SizedBox(
@@ -90,7 +108,7 @@ class _FillInformationState extends State<FillInformation> {
                   children: [
                     Expanded(
                         child: TextFieldCustomChoose(
-                      title: 'state',
+                      title: getTranslated(context, STATE),
                       textInputAction: TextInputAction.next,
                     )),
                     SizedBox(
@@ -98,7 +116,7 @@ class _FillInformationState extends State<FillInformation> {
                     ),
                     Expanded(
                         child: TextFieldCustomChoose(
-                      title: 'city/province',
+                      title: getTranslated(context, CITY_PROVINCE),
                       textInputAction: TextInputAction.next,
                     )),
                   ],
@@ -110,7 +128,7 @@ class _FillInformationState extends State<FillInformation> {
                   children: [
                     Expanded(
                         child: TextFieldCustom(
-                      hint: 'ZIP code',
+                      hint: getTranslated(context, ZIP_CODE),
                       textInputAction: TextInputAction.next,
                     )),
                     SizedBox(
@@ -118,7 +136,7 @@ class _FillInformationState extends State<FillInformation> {
                     ),
                     Expanded(
                         child: TextFieldCustomChoose(
-                      title: 'country',
+                      title: getTranslated(context, COUNTRY),
                       textInputAction: TextInputAction.next,
                     )),
                   ],
@@ -127,13 +145,13 @@ class _FillInformationState extends State<FillInformation> {
                   height: 20,
                 ),
                 TextFieldCustom(
-                    hint: 'phone number',
+                    hint: getTranslated(context, PHONE_NUMBER),
                     textInputAction: TextInputAction.done),
                 SizedBox(
                   height: 10,
                 ),
                 Text(
-                  '*We won’t call unless there is an issue with your account. We never share your personal info with anyone!',
+                  getTranslated(context, NOTE_FILL_IN_YOUR_INFORMATION),
                   style: AppTheme.text10RegularWhite,
                 ),
                 SizedBox(

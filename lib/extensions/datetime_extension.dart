@@ -29,4 +29,8 @@ extension DateTimeExtension on DateTime {
   String formatDateDefault() {
     return DateFormat('dd/MM/yyyy').format(this);
   }
+
+  String formatDayOfBirthday() {
+    return DateFormat('MMM dd, yyyy').format(this);
+  }
 }

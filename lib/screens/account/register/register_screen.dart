@@ -8,6 +8,7 @@ import 'package:shapee_project/screens/account/choose_role/choose_role_screen.da
 import 'package:shapee_project/widgets/app_bar.dart';
 import 'package:shapee_project/widgets/button.dart';
 import 'package:shapee_project/widgets/text_field.dart';
+import '../../../app/import_file_common.dart';
 
 class RegisterScreen extends StatefulWidget {
   @override
@@ -43,21 +44,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 SizedBox(height: AppDimens.height20,),
                 Row(
                   children: [
-                    Expanded(child: ButtonIconCustom(title: "Connect with Facebook",)),
+                    Expanded(child: ButtonIconCustom(title: getTranslated(context, CONNECT_WITH_FB),)),
                   ],
                 ),
                 SizedBox(height: AppDimens.height40,),
-                Text("or", style: AppTheme.buttonIconDefault,),
+                Text(getTranslated(context, OR), style: AppTheme.buttonIconDefault,),
                 SizedBox(height: AppDimens.height40,),
-                TextFieldCustomLogin(hint: "email", textInputType: TextInputType.emailAddress, textInputAction: TextInputAction.next,),
+                TextFieldCustomLogin(hint: getTranslated(context, EMAIL), textInputType: TextInputType.emailAddress, textInputAction: TextInputAction.next,),
                 SizedBox(height: AppDimens.height20,),
-                TextFieldCustomLogin(hint: "password", textInputType: TextInputType.text, isPassword: true, textInputAction: TextInputAction.next),
+                TextFieldCustomLogin(hint: getTranslated(context, PASSWORD), textInputType: TextInputType.text, isPassword: true, textInputAction: TextInputAction.next),
                 SizedBox(height: AppDimens.height20,),
-                TextFieldCustomLogin(hint: "username", textInputType: TextInputType.text),
+                TextFieldCustomLogin(hint: getTranslated(context, USERNAME), textInputType: TextInputType.text),
                 SizedBox(height: AppDimens.height50,),
                 Row(
                   children: [
-                    Expanded(child: ButtonCustom(title: "Create account", onPressed: () {
+                    Expanded(child: ButtonCustom(title: getTranslated(context, CREATE_ACCOUNT), onPressed: () {
                       Get.to(ChooseRoleScreen());
                     },)),
                   ],

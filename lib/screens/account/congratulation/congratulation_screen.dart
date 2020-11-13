@@ -28,7 +28,7 @@ class _CongratulationScreenState extends State<CongratulationScreen> {
                   children: [
                     SizedBox(height: sizeDevice.height / 8.5,),
                     Text(
-                      'CONGRATULATIONS!',
+                      getTranslated(context, CONGRATULATION),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontFamily: FontFamily.bold,
@@ -36,7 +36,7 @@ class _CongratulationScreenState extends State<CongratulationScreen> {
                           color: AppColors.white),
                     ),
                     SizedBox(height: sizeDevice.height / 20,),
-                    Text('You are now a tester. That means you can get readings from the advisors and rate them. Click "Next" to start.',
+                    Text(getTranslated(context, CONGRATULATION_CONTENT_TESTER),
                       textAlign: TextAlign.center,
                       style: AppTheme.text16RegularWhite,),
 
@@ -45,7 +45,7 @@ class _CongratulationScreenState extends State<CongratulationScreen> {
                 Row(
                   children: [
                     Expanded(
-                      child: ButtonCustom(title: 'Next',onPressed: () {
+                      child: ButtonCustom(title: getTranslated(context, NEXT),onPressed: () {
 
                       },),
                     ),

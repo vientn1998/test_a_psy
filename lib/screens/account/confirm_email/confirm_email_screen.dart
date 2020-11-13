@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shapee_project/screens/account/change_password/new_password_screen.dart';
-import 'package:shapee_project/screens/account/change_password/widgets/text_field_email.dart';
-
-import '../../../constant/app_color.dart';
-import '../../../constant/app_dimen.dart';
-import '../../../constant/app_font.dart';
-import '../../../constant/app_theme.dart';
 import '../../../widgets/app_bar.dart';
 import 'widgets/text_field_pin_code.dart';
+import '../../../app/import_file_common.dart';
 
 class ConfirmEmailScreen extends StatefulWidget {
   @override
@@ -20,7 +15,7 @@ class _ConfirmEmailScreenState extends State<ConfirmEmailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.primary,
-      appBar: widgetAppBarText(title: '', titleRight: 'Confirm', isHiddenRight: false, actionBack: () {
+      appBar: widgetAppBarText(title: '', titleRight: getTranslated(context, CONFIRM), isHiddenRight: false, actionBack: () {
         Get.back();
       }, actionRight: () {
         FocusScope.of(context).unfocus();
@@ -34,7 +29,7 @@ class _ConfirmEmailScreenState extends State<ConfirmEmailScreen> {
             children: [
               SizedBox(height: 60,),
               Text(
-                'CONFIRM EMAIL',
+                getTranslated(context, CONFIRM_EMAIL),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontFamily: FontFamily.regular,
@@ -50,7 +45,7 @@ class _ConfirmEmailScreenState extends State<ConfirmEmailScreen> {
               Row(
                 children: [
                   Text(
-                    '**Incorrect passcode. Please try again.',
+                    getTranslated(context, INCORRECT_PASSCODE),
                     textAlign: TextAlign.start,
                     style: AppTheme.textInvalidTextField,
                   ),
@@ -60,7 +55,7 @@ class _ConfirmEmailScreenState extends State<ConfirmEmailScreen> {
               Row(
                 children: [
                   Text(
-                    'Didn’t get it? Send again.',
+                    getTranslated(context, DID_NOT_GET_SEND_AGAIN),
                     textAlign: TextAlign.start,
                     style: AppTheme.text16RegularWhite,
                   ),
