@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:shapee_project/constant/app_color.dart';
 import 'package:shapee_project/constant/app_dimen.dart';
 import 'package:shapee_project/constant/app_image.dart';
@@ -45,7 +46,7 @@ class ButtonIconCustom extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(StringUtils.getUrlAssets(AppImage.fb_btn)),
+            SvgPicture.asset(StringUtils.getImageSVGUrlAssets(AppImage.fb_btn)),
             SizedBox(
               width: 10,
             ),
@@ -56,7 +57,7 @@ class ButtonIconCustom extends StatelessWidget {
           ],
         ),
         elevation: 0,
-        color: AppColors.text,
+        color: AppColors.backgroundBtnIcon,
       ),
     );
   }

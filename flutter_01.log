@@ -1,0 +1,54 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --no-color run --machine --track-widget-creation --device-id=12a33993 --start-paused --dart-define=flutter.inspector.structuredErrors=true lib/main.dart
+
+## exception
+
+ProcessException: ProcessException: Too many open files in system
+  Command: /Users/shapee/Documents/Flutter/sdk/flutter/bin/cache/dart-sdk/bin/dart --disable-dart-dev /Users/shapee/Documents/Flutter/sdk/flutter/bin/cache/artifacts/engine/darwin-x64/frontend_server.dart.snapshot --sdk-root /Users/shapee/Documents/Flutter/sdk/flutter/bin/cache/artifacts/engine/common/flutter_patched_sdk/ --incremental --target=flutter --debugger-module-names --experimental-emit-debug-metadata -Ddart.developer.causal_async_stacks=true -Dflutter.inspector.structuredErrors=true --output-dill /var/folders/zw/svj5v0g507q85w70t6z216f80000gn/T/flutter_tools.MYsFtK/flutter_tool.syyjWZ/app.dill --packages .packages -Ddart.vm.profile=false -Ddart.vm.product=false --bytecode-options=source-positions,local-var-info,debugger-stops,instance-field-initializers,keep-unreachable-code,avoid-closure-call-instructions --enable-asserts --track-widget-creation --initialize-from-dill build/f872507f30e2ff2523f0f1d19160266e.cache.dill.track.dill
+
+```
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 1.22.3, on Mac OS X 10.15.1 19B88, locale en)
+    • Flutter version 1.22.3 at /Users/shapee/Documents/Flutter/sdk/flutter
+    • Framework revision 8874f21e79 (2 weeks ago), 2020-10-29 14:14:35 -0700
+    • Engine revision a1440ca392
+    • Dart version 2.10.3
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 29.0.3)
+    • Android SDK at /Users/shapee/Library/Android/sdk
+    • Platform android-29, build-tools 29.0.3
+    • Java binary at: /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b3-6222593)
+    • All Android licenses accepted.
+
+[✓] Xcode - develop for iOS and macOS (Xcode 11.3.1)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Xcode 11.3.1, Build version 11C505
+    • CocoaPods version 1.10.0
+
+[!] Android Studio (version 4.0)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    ✗ Flutter plugin not installed; this adds Flutter specific functionality.
+    ✗ Dart plugin not installed; this adds Dart specific functionality.
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b3-6222593)
+
+[✓] IntelliJ IDEA Community Edition (version 2020.2.3)
+    • IntelliJ at /Applications/IntelliJ IDEA CE.app
+    • Flutter plugin installed
+    • Dart plugin version 202.8070
+
+[✓] Connected device (3 available)
+    • Redmi Note 8 (mobile) • 12a33993                             • android-arm64 • Android 9 (API 28)
+    • iPhone 11 (mobile)    • F0D4EB76-056E-4743-9E9B-D9F5BA78AFE0 • ios           • com.apple.CoreSimulator.SimRuntime.iOS-13-3 (simulator)
+    • iPhone 8 (mobile)     • E853B8D0-E9FE-4E10-974C-240BDCF1A60F • ios           • com.apple.CoreSimulator.SimRuntime.iOS-13-3 (simulator)
+
+! Doctor found issues in 1 category.
+```

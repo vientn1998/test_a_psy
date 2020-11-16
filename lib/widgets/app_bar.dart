@@ -110,3 +110,55 @@ Widget widgetAppBarText(
     ],
   );
 }
+
+//TODO: app Bar background white
+Widget widgetAppBarWhiteText(
+    {
+      String title = "",
+      String titleRight = 'Done',
+      IconData iconLeft = Icons.arrow_back,
+      bool isHiddenIconLeft = false,
+      bool isHiddenRight = true,
+      double elevation = 4,
+      Color backgroundColor = AppColors.white,
+      Function actionBack,
+      Function actionRight}) {
+  return AppBar(
+    centerTitle: false,
+    title: Text(
+      title,
+      style: AppTheme.text20Bold,
+    ),
+    backgroundColor: backgroundColor,
+    brightness: Brightness.light,
+    iconTheme: IconThemeData(color: AppColors.iconDefault),
+    elevation: elevation,
+    leading: isHiddenIconLeft
+        ? Container()
+        : IconButton(
+      icon: Icon(
+        iconLeft,
+        size: 22,
+      ),
+      padding: EdgeInsets.only(right: 7),
+      onPressed: actionBack,
+    ),
+    actions: [
+      isHiddenRight
+          ? Container()
+          : InkWell(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+                horizontal: AppDimens.paddingDefault),
+            child: Text(
+              titleRight,
+              style: AppTheme.text16BoldWhite,
+            ),
+          ),
+        ),
+        onTap: actionRight,
+      )
+    ],
+  );
+}

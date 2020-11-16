@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>menu_news</title>
+    <g id="Milestone-2---360x640dp-Android-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Side-menu---Reader-(testing-phrase)" transform="translate(-18.000000, -281.000000)" fill="#FFFFFF">
+            <g id="menu-item-set-2" transform="translate(15.941057, 244.000000)">
+                <g id="news" transform="translate(0.000000, 35.189414)">
+                    <g id="Group" transform="translate(0.298201, 0.054727)">
+                        <g id="launch" transform="translate(2.000000, 2.000000)">
+                            <path d="M17.7777778,17.7777778 L2.22222222,17.7777778 L2.22222222,2.22222222 L10,2.22222222 L10,0 L2.22222222,0 C1,0 0,1 0,2.22222222 L0,17.7777778 C0,19 1,20 2.22222222,20 L17.7777778,20 C19,20 20,19 20,17.7777778 L20,10 L17.7777778,10 L17.7777778,17.7777778 L17.7777778,17.7777778 Z M12.2222222,0 L12.2222222,2.22222222 L16.2222222,2.22222222 L5.33333333,13.1111111 L6.88888889,14.6666667 L17.7777778,3.77777778 L17.7777778,7.77777778 L20,7.77777778 L20,0 L12.2222222,0 L12.2222222,0 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

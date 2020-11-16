@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:shapee_project/screens/home/home_screen.dart';
 import 'package:shapee_project/utils/constant.dart';
 import 'package:shapee_project/utils/string_utils.dart';
 import 'package:shapee_project/widgets/button.dart';
@@ -25,11 +27,12 @@ class _CongratulationScreenState extends State<CongratulationScreen> {
                 SizedBox(
                   height: sizeDevice.height / 11,
                 ),
-                Image.asset(
-                  StringUtils.getUrlAssets(AppImage.air_balloon),
-                  width: sizeDevice.width - 32,
-                  height: sizeDevice.height / 3.4,
-                  fit: BoxFit.fill,
+                AspectRatio(
+                  aspectRatio: 1.66,
+                  child: Image.asset(
+                    StringUtils.getImageUrlAssets(AppImage.air_balloon),
+                    fit: BoxFit.fill,
+                  ),
                 ),
                 Expanded(
                     child: Column(
@@ -60,7 +63,9 @@ class _CongratulationScreenState extends State<CongratulationScreen> {
                     Expanded(
                       child: ButtonCustom(
                         title: getTranslated(context, NEXT),
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.offAll(HomeScreen());
+                        },
                       ),
                     ),
                   ],

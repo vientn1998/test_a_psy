@@ -73,7 +73,7 @@ class ChooseRoleScreen extends StatelessWidget {
             style: AppTheme.text15Bold,
           ),
           elevation: 0,
-          color: AppColors.text,
+          color: AppColors.textPrimary,
         ),
       ),
     );

@@ -11,12 +11,52 @@ String getTranslated(BuildContext context, String key) {
   return AppLocalization.of(context).getTranslatedValue(key);
 }
 
+String getTextTitleMenu(BuildContext context, int index) {
+  switch(index) {
+    case 0:
+      return getTranslated(context, PROFILE);
+      break;
+    case 1:
+      return getTranslated(context, MY_STATS);
+      break;
+    case 2:
+      return getTranslated(context, GET_TESTED);
+      break;
+    case 3:
+      return getTranslated(context, SCHEDULER);
+      break;
+    case 4:
+      return getTranslated(context, ARTICLES);
+      break;
+    case 5:
+      return getTranslated(context, NEWS);
+      break;
+    case 6:
+      return getTranslated(context, NOTIFICATION_SETTINGS);
+      break;
+    case 7:
+      return getTranslated(context, CUSTOMER_SUPPORT);
+      break;
+    case 8:
+      return getTranslated(context, TERMS_OF_AGREEMENT);
+      break;
+    case 9:
+      return getTranslated(context, INSTRUCTIONS);
+      break;
+    default:
+      return getTranslated(context, PROFILE);
+      break;
+  }
+}
+
 /*==========================INTRO========================== */
 const String INTRO1 = 'intro1';
 const String INTRO2 = 'intro2';
 const String INTRO3 = 'intro3';
 const String INTRO4 = 'intro4';
 const String DONE = 'done';
+const String LOGIN = 'login';
+const String GET_STARTED = 'get_started';
 /*==========================LOGIN========================== */
 const String LOGIN_WITH_FB = 'login_with_fb';
 const String SIGN_IN = 'sign_in';
@@ -69,3 +109,15 @@ const String NOTE_FILL_IN_YOUR_INFORMATION = 'note_fill_in_your_information';
 /*==========================CONGRATULATION========================== */
 const String CONGRATULATION = 'congratulation';
 const String CONGRATULATION_CONTENT_TESTER = 'congratulation_content_tester';
+/*==========================MENU========================== */
+const String PROFILE = 'profile';
+const String MY_STATS = 'my_stats';
+const String GET_TESTED = 'get_tested';
+const String SCHEDULER = 'scheduler';
+const String ARTICLES = 'articles';
+const String NEWS = 'news';
+const String NOTIFICATION_SETTINGS = 'notification_settings';
+const String CUSTOMER_SUPPORT = 'customer_support';
+const String TERMS_OF_AGREEMENT = 'terms_of_agreement';
+const String INSTRUCTIONS = 'instructions';
+const String COPYRIGHT_TEST_A_PSYCHIC = 'copyright_test_a_psychic';

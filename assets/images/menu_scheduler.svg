@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="18px" viewBox="0 0 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>menu_scheduler</title>
+    <g id="Milestone-2---360x640dp-Android-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Side-menu---Reader-(testing-phrase)" transform="translate(-19.000000, -159.000000)">
+            <g id="menu-item-set-1" transform="translate(14.941057, 56.000000)">
+                <g id="scheduler" transform="translate(1.040094, 100.149114)">
+                    <g id="Group" transform="translate(0.268849, 0.288386)">
+                        <g id="Group" transform="translate(2.000000, 2.000000)">
+                            <g id="Frames-24px">
+                                <rect id="Rectangle-path" x="0" y="0" width="20" height="20"></rect>
+                            </g>
+                            <g id="Group" transform="translate(0.833333, 0.833333)" fill="#FFFFFF">
+                                <path d="M16.6666667,1.66666667 L14.1666667,1.66666667 L14.1666667,0 L12.5,0 L12.5,5 L14.1666667,5 L14.1666667,3.33333333 L16.6666667,3.33333333 L16.6666667,15.8333333 L1.66666667,15.8333333 L1.66666667,3.33333333 L3.33333333,3.33333333 L3.33333333,1.66666667 L1.66666667,1.66666667 C0.746666667,1.66666667 0,2.41333333 0,3.33333333 L0,15.8333333 C0,16.7533333 0.746666667,17.5 1.66666667,17.5 L16.6666667,17.5 C17.5866667,17.5 18.3333333,16.7533333 18.3333333,15.8333333 L18.3333333,3.33333333 C18.3333333,2.41333333 17.5866667,1.66666667 16.6666667,1.66666667 Z" id="Shape"></path>
+                                <polygon id="Shape" points="5.83333333 3.33333333 11.6666667 3.33333333 11.6666667 1.66666667 5.83333333 1.66666667 5.83333333 0 4.16666667 0 4.16666667 5 5.83333333 5"></polygon>
+                                <rect id="Rectangle-path" x="3.33333333" y="6.66666667" width="3.33333333" height="3.33333333"></rect>
+                                <rect id="Rectangle-path" x="7.5" y="6.66666667" width="3.33333333" height="3.33333333"></rect>
+                                <rect id="Rectangle-path" x="11.6666667" y="6.66666667" width="3.33333333" height="3.33333333"></rect>
+                                <rect id="Rectangle-path" x="3.33333333" y="10.8333333" width="3.33333333" height="3.33333333"></rect>
+                                <rect id="Rectangle-path" x="7.5" y="10.8333333" width="3.33333333" height="3.33333333"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

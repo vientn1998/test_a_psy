@@ -19,7 +19,14 @@ class AppTheme {
         statusBarBrightness:
             Brightness.dark // Dark == white status bar -- for IOS.
         ));
-    // SystemChrome.setEnabledSystemUIOverlays ([SystemUiOverlay.top]);
+  }
+
+  static setUpStatusBarHome() {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
+        statusBarColor: Colors.black12, // Color for Android
+        statusBarBrightness:
+        Brightness.dark // Dark == white status bar -- for IOS.
+    ));
   }
 
   static final ThemeData themeDataAndroid = ThemeData(
@@ -57,6 +64,17 @@ class AppTheme {
     color: AppColors.white,
   );
 
+  static const TextStyle text14RegularWhite = TextStyle(
+    fontSize: 14,
+    color: AppColors.white,
+  );
+
+  static const TextStyle text14BoldWhite = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: 15,
+    color: AppColors.white,
+  );
+
   static const TextStyle text15RegularWhite = TextStyle(
     fontSize: 15,
     color: AppColors.white,
@@ -76,7 +94,7 @@ class AppTheme {
   static const TextStyle text16Medium = TextStyle(
     fontWeight: FontWeight.w500,
     fontSize: 16,
-    color: AppColors.text,
+    color: AppColors.textPrimary,
   );
 
   static const TextStyle text16MediumWhite = TextStyle(
@@ -99,13 +117,7 @@ class AppTheme {
   static const TextStyle text16Bold = TextStyle(
     fontWeight: FontWeight.bold,
     fontSize: 16,
-    color: AppColors.text,
-  );
-
-  static const TextStyle text16MediumTitle = TextStyle(
-    fontWeight: FontWeight.w500,
-    fontSize: 16,
-    color: AppColors.title,
+    color: AppColors.textPrimary,
   );
 
   static const TextStyle text26MediumWhite = TextStyle(
@@ -117,7 +129,7 @@ class AppTheme {
   static const TextStyle text20Bold = TextStyle(
     fontWeight: FontWeight.bold,
     fontSize: 20,
-    color: AppColors.text,
+    color: AppColors.textPrimary,
   );
 
   static const TextStyle textTextFieldPinCOde = TextStyle(
@@ -145,7 +157,7 @@ class AppTheme {
   static const TextStyle textInvalidTextField = TextStyle(
     fontWeight: FontWeight.bold,
     fontSize: 14,
-    color: AppColors.invalid,
+    color: AppColors.invalidTextField,
   );
 
   static const TextStyle textDesIntro =

@@ -1,11 +1,11 @@
 // This is a generated file; do not edit or check into version control.
-FLUTTER_ROOT=/Users/triminh/Developer/flutter
-FLUTTER_APPLICATION_PATH=/Users/triminh/Desktop/shapee_project
-FLUTTER_TARGET=/Users/triminh/Desktop/shapee_project/lib/main.dart
+FLUTTER_ROOT=/Users/shapee/Documents/Flutter/sdk/flutter
+FLUTTER_APPLICATION_PATH=/Users/shapee/test_a_psy
+FLUTTER_TARGET=/Users/shapee/test_a_psy/lib/main.dart
 FLUTTER_BUILD_DIR=build
 SYMROOT=${SOURCE_ROOT}/../build/ios
 OTHER_LDFLAGS=$(inherited) -framework Flutter
-FLUTTER_FRAMEWORK_DIR=/Users/triminh/Developer/flutter/bin/cache/artifacts/engine/ios
+FLUTTER_FRAMEWORK_DIR=/Users/shapee/Documents/Flutter/sdk/flutter/bin/cache/artifacts/engine/ios
 FLUTTER_BUILD_NAME=1.0.0
 FLUTTER_BUILD_NUMBER=1
 DART_DEFINES=flutter.inspector.structuredErrors%3Dtrue

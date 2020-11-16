@@ -1,0 +1,317 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --no-color run --machine --track-widget-creation --device-id=12a33993 --start-paused --dart-define=flutter.inspector.structuredErrors=true lib/main.dart
+
+## exception
+
+FileSystemException: FileSystemException: Cannot open file, path = '/Users/shapee/Documents/Flutter/sdk/flutter/bin/internal/material_fonts.version' (OS Error: Too many open files in system, errno = 23)
+
+```
+#0      _File.throwIfError (dart:io/file_impl.dart:635:7)
+#1      _File.openSync (dart:io/file_impl.dart:479:5)
+#2      _File.readAsBytesSync (dart:io/file_impl.dart:539:18)
+#3      _File.readAsStringSync (dart:io/file_impl.dart:584:18)
+#4      ForwardingFile.readAsStringSync (package:file/src/forwarding/forwarding_file.dart:97:16)
+#5      ForwardingFile.readAsStringSync (package:file/src/forwarding/forwarding_file.dart:97:16)
+#6      Cache.getVersionFor (package:flutter_tools/src/cache.dart:385:51)
+#7      CachedArtifact.version (package:flutter_tools/src/cache.dart:541:31)
+#8      CachedArtifact.isUpToDate (package:flutter_tools/src/cache.dart:554:9)
+#9      Cache.updateAll (package:flutter_tools/src/cache.dart:448:20)
+#10     FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:930:27)
+<asynchronous suspension>
+#11     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:836:33)
+<asynchronous suspension>
+#12     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart)
+#13     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:29)
+#14     _rootRun (dart:async/zone.dart:1190:13)
+#15     _CustomZone.run (dart:async/zone.dart:1093:19)
+#16     _runZoned (dart:async/zone.dart:1630:10)
+#17     runZoned (dart:async/zone.dart:1550:10)
+#18     AppContext.run (package:flutter_tools/src/base/context.dart:149:18)
+#19     FlutterCommand.run (package:flutter_tools/src/runner/flutter_command.dart:825:20)
+#20     CommandRunner.runCommand (package:args/command_runner.dart:197:27)
+#21     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:335:21)
+<asynchronous suspension>
+#22     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart)
+#23     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:29)
+#24     _rootRun (dart:async/zone.dart:1190:13)
+#25     _CustomZone.run (dart:async/zone.dart:1093:19)
+#26     _runZoned (dart:async/zone.dart:1630:10)
+#27     runZoned (dart:async/zone.dart:1550:10)
+#28     AppContext.run (package:flutter_tools/src/base/context.dart:149:18)
+#29     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:281:19)
+<asynchronous suspension>
+#30     CommandRunner.run.<anonymous closure> (package:args/command_runner.dart:112:25)
+#31     new Future.sync (dart:async/future.dart:223:31)
+#32     CommandRunner.run (package:args/command_runner.dart:112:14)
+#33     FlutterCommandRunner.run (package:flutter_tools/src/runner/flutter_command_runner.dart:230:18)
+#34     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:63:22)
+#35     _rootRun (dart:async/zone.dart:1190:13)
+#36     _CustomZone.run (dart:async/zone.dart:1093:19)
+#37     _runZoned (dart:async/zone.dart:1630:10)
+#38     runZonedGuarded (dart:async/zone.dart:1618:12)
+#39     runZoned (dart:async/zone.dart:1547:12)
+#40     run.<anonymous closure> (package:flutter_tools/runner.dart:61:18)
+<asynchronous suspension>
+#41     run.<anonymous closure> (package:flutter_tools/runner.dart)
+#42     runInContext.runnerWrapper (package:flutter_tools/src/context_runner.dart:67:18)
+<asynchronous suspension>
+#43     runInContext.runnerWrapper (package:flutter_tools/src/context_runner.dart)
+#44     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:29)
+#45     _rootRun (dart:async/zone.dart:1190:13)
+#46     _CustomZone.run (dart:async/zone.dart:1093:19)
+#47     _runZoned (dart:async/zone.dart:1630:10)
+#48     runZoned (dart:async/zone.dart:1550:10)
+#49     AppContext.run (package:flutter_tools/src/base/context.dart:149:18)
+#50     runInContext (package:flutter_tools/src/context_runner.dart:70:24)
+#51     run (package:flutter_tools/runner.dart:46:10)
+#52     main (package:flutter_tools/executable.dart:77:9)
+#53     main (file:///Users/shapee/documents/flutter/sdk/flutter/packages/flutter_tools/bin/flutter_tools.dart:8:3)
+#54     _startIsolate.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:299:32)
+#55     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:168:12)
+```
+
+## flutter doctor
+
+```
+[☠] Flutter (the doctor check crashed)
+    ✗ Due to an error, the doctor check did not complete. If the error message below is not helpful, please let us know about this issue at https://github.com/flutter/flutter/issues.
+    ✗ ProcessException: Too many open files in system
+        Command: /usr/bin/git -c log.showSignature=false log -n 1 --pretty=format:%ar
+    • #0      _ProcessImpl._runAndWait (dart:io-patch/process_patch.dart:473:7)
+      #1      _runNonInteractiveProcessSync (dart:io-patch/process_patch.dart:616:18)
+      #2      Process.runSync (dart:io-patch/process_patch.dart:66:12)
+      #3      LocalProcessManager.runSync (package:process/src/interface/local_process_manager.dart:91:20)
+      #4      ErrorHandlingProcessManager.runSync.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:481:37)
+      #5      _runSync (package:flutter_tools/src/base/error_handling_io.dart:380:14)
+      #6      ErrorHandlingProcessManager.runSync (package:flutter_tools/src/base/error_handling_io.dart:481:12)
+      #7      _DefaultProcessUtils.runSync (package:flutter_tools/src/base/process.dart:425:51)
+      #8      _runGit (package:flutter_tools/src/version.dart:672:23)
+      #9      FlutterVersion.frameworkAge (package:flutter_tools/src/version.dart:149:30)
+      #10     FlutterValidator.validate (package:flutter_tools/src/doctor.dart:650:17)
+      #11     asyncGuard.<anonymous closure> (package:flutter_tools/src/base/async_guard.dart:111:32)
+      #12     _rootRun (dart:async/zone.dart:1190:13)
+      #13     _CustomZone.run (dart:async/zone.dart:1093:19)
+      #14     _runZoned (dart:async/zone.dart:1630:10)
+      #15     runZonedGuarded (dart:async/zone.dart:1618:12)
+      #16     runZoned (dart:async/zone.dart:1547:12)
+      #17     asyncGuard (package:flutter_tools/src/base/async_guard.dart:109:3)
+      #18     Doctor.startValidatorTasks (package:flutter_tools/src/doctor.dart:191:9)
+      #19     Doctor.diagnose (package:flutter_tools/src/doctor.dart:290:47)
+      #20     _doctorText (package:flutter_tools/runner.dart:230:18)
+      #21     _handleToolError (package:flutter_tools/runner.dart:155:27)
+      #22     _rootRunUnary (dart:async/zone.dart:1198:47)
+      #23     _CustomZone.runUnary (dart:async/zone.dart:1100:19)
+      #24     _FutureListener.handleValue (dart:async/future_impl.dart:143:18)
+      #25     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:696:45)
+      #26     Future._propagateToListeners (dart:async/future_impl.dart:725:32)
+      #27     Future._completeWithValue (dart:async/future_impl.dart:529:5)
+      #28     _AsyncAwaitCompleter.complete (dart:async-patch/async_patch.dart:40:15)
+      #29     _completeOnAsyncReturn (dart:async-patch/async_patch.dart:311:13)
+      #30     CrashReportSender.sendReport (package:flutter_tools/src/reporting/crash_reporting.dart)
+      #31     _asyncErrorWrapperHelper.errorCallback (dart:async-patch/async_patch.dart:91:64)
+      #32     _rootRunBinary (dart:async/zone.dart:1214:47)
+      #33     _CustomZone.runBinary (dart:async/zone.dart:1107:19)
+      #34     _FutureListener.handleError (dart:async/future_impl.dart:157:20)
+      #35     Future._propagateToListeners.handleError (dart:async/future_impl.dart:708:47)
+      #36     Future._propagateToListeners (dart:async/future_impl.dart:729:24)
+      #37     Future._completeError (dart:async/future_impl.dart:537:5)
+      #38     _AsyncAwaitCompleter.completeError (dart:async-patch/async_patch.dart:47:15)
+      #39     IOClient.send (package:http/src/io_client.dart)
+      #40     _asyncErrorWrapperHelper.errorCallback (dart:async-patch/async_patch.dart:91:64)
+      #41     _rootRunBinary (dart:async/zone.dart:1214:47)
+      #42     _CustomZone.runBinary (dart:async/zone.dart:1107:19)
+      #43     _FutureListener.handleError (dart:async/future_impl.dart:157:20)
+      #44     Future._propagateToListeners.handleError (dart:async/future_impl.dart:708:47)
+      #45     Future._propagateToListeners (dart:async/future_impl.dart:729:24)
+      #46     Future._completeError (dart:async/future_impl.dart:537:5)
+      #47     Future._asyncCompleteError.<anonymous closure> (dart:async/future_impl.dart:593:7)
+      #48     _rootRun (dart:async/zone.dart:1190:13)
+      #49     _CustomZone.run (dart:async/zone.dart:1093:19)
+      #50     _CustomZone.runGuarded (dart:async/zone.dart:997:7)
+      #51     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:1037:23)
+      #52     _microtaskLoop (dart:async/schedule_microtask.dart:41:21)
+      #53     _startMicrotaskLoop (dart:async/schedule_microtask.dart:50:5)
+      #54     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:118:13)
+      #55     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:169:5)
+
+
+[☠] Android toolchain - develop for Android devices (the doctor check crashed)
+    ✗ Due to an error, the doctor check did not complete. If the error message below is not helpful, please let us know about this issue at https://github.com/flutter/flutter/issues.
+    ✗ ProcessException: Too many open files in system
+        Command: /usr/bin/which java
+    • #0      _ProcessImpl._runAndWait (dart:io-patch/process_patch.dart:473:7)
+      #1      _runNonInteractiveProcessSync (dart:io-patch/process_patch.dart:616:18)
+      #2      Process.runSync (dart:io-patch/process_patch.dart:66:12)
+      #3      LocalProcessManager.runSync (package:process/src/interface/local_process_manager.dart:91:20)
+      #4      ErrorHandlingProcessManager.runSync.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:481:37)
+      #5      _runSync (package:flutter_tools/src/base/error_handling_io.dart:380:14)
+      #6      ErrorHandlingProcessManager.runSync (package:flutter_tools/src/base/error_handling_io.dart:481:12)
+      #7      _PosixUtils._which (package:flutter_tools/src/base/os.dart:199:50)
+      #8      OperatingSystemUtils.which (package:flutter_tools/src/base/os.dart:79:31)
+      #9      AndroidSdk.findJavaBinary (package:flutter_tools/src/android/android_sdk.dart:388:33)
+      #10     AndroidValidator.validate (package:flutter_tools/src/android/android_workflow.dart:227:42)
+      #11     GroupedValidator.validate.<anonymous closure> (package:flutter_tools/src/doctor.dart:450:56)
+      #12     asyncGuard.<anonymous closure> (package:flutter_tools/src/base/async_guard.dart:111:32)
+      #13     _rootRun (dart:async/zone.dart:1190:13)
+      #14     _CustomZone.run (dart:async/zone.dart:1093:19)
+      #15     _runZoned (dart:async/zone.dart:1630:10)
+      #16     runZonedGuarded (dart:async/zone.dart:1618:12)
+      #17     runZoned (dart:async/zone.dart:1547:12)
+      #18     asyncGuard (package:flutter_tools/src/base/async_guard.dart:109:3)
+      #19     GroupedValidator.validate (package:flutter_tools/src/doctor.dart:450:11)
+      #20     asyncGuard.<anonymous closure> (package:flutter_tools/src/base/async_guard.dart:111:32)
+      #21     _rootRun (dart:async/zone.dart:1190:13)
+      #22     _CustomZone.run (dart:async/zone.dart:1093:19)
+      #23     _runZoned (dart:async/zone.dart:1630:10)
+      #24     runZonedGuarded (dart:async/zone.dart:1618:12)
+      #25     runZoned (dart:async/zone.dart:1547:12)
+      #26     asyncGuard (package:flutter_tools/src/base/async_guard.dart:109:3)
+      #27     Doctor.startValidatorTasks (package:flutter_tools/src/doctor.dart:191:9)
+      #28     Doctor.diagnose (package:flutter_tools/src/doctor.dart:290:47)
+      #29     _doctorText (package:flutter_tools/runner.dart:230:18)
+      #30     _handleToolError (package:flutter_tools/runner.dart:155:27)
+      #31     _rootRunUnary (dart:async/zone.dart:1198:47)
+      #32     _CustomZone.runUnary (dart:async/zone.dart:1100:19)
+      #33     _FutureListener.handleValue (dart:async/future_impl.dart:143:18)
+      #34     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:696:45)
+      #35     Future._propagateToListeners (dart:async/future_impl.dart:725:32)
+      #36     Future._completeWithValue (dart:async/future_impl.dart:529:5)
+      #37     _AsyncAwaitCompleter.complete (dart:async-patch/async_patch.dart:40:15)
+      #38     _completeOnAsyncReturn (dart:async-patch/async_patch.dart:311:13)
+      #39     CrashReportSender.sendReport (package:flutter_tools/src/reporting/crash_reporting.dart)
+      #40     _asyncErrorWrapperHelper.errorCallback (dart:async-patch/async_patch.dart:91:64)
+      #41     _rootRunBinary (dart:async/zone.dart:1214:47)
+      #42     _CustomZone.runBinary (dart:async/zone.dart:1107:19)
+      #43     _FutureListener.handleError (dart:async/future_impl.dart:157:20)
+      #44     Future._propagateToListeners.handleError (dart:async/future_impl.dart:708:47)
+      #45     Future._propagateToListeners (dart:async/future_impl.dart:729:24)
+      #46     Future._completeError (dart:async/future_impl.dart:537:5)
+      #47     _AsyncAwaitCompleter.completeError (dart:async-patch/async_patch.dart:47:15)
+      #48     IOClient.send (package:http/src/io_client.dart)
+      #49     _asyncErrorWrapperHelper.errorCallback (dart:async-patch/async_patch.dart:91:64)
+      #50     _rootRunBinary (dart:async/zone.dart:1214:47)
+      #51     _CustomZone.runBinary (dart:async/zone.dart:1107:19)
+      #52     _FutureListener.handleError (dart:async/future_impl.dart:157:20)
+      #53     Future._propagateToListeners.handleError (dart:async/future_impl.dart:708:47)
+      #54     Future._propagateToListeners (dart:async/future_impl.dart:729:24)
+      #55     Future._completeError (dart:async/future_impl.dart:537:5)
+      #56     Future._asyncCompleteError.<anonymous closure> (dart:async/future_impl.dart:593:7)
+      #57     _rootRun (dart:async/zone.dart:1190:13)
+      #58     _CustomZone.run (dart:async/zone.dart:1093:19)
+      #59     _CustomZone.runGuarded (dart:async/zone.dart:997:7)
+      #60     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:1037:23)
+      #61     _microtaskLoop (dart:async/schedule_microtask.dart:41:21)
+      #62     _startMicrotaskLoop (dart:async/schedule_microtask.dart:50:5)
+      #63     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:118:13)
+      #64     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:169:5)
+
+    ✗ Due to an error, the doctor check did not complete. If the error message below is not helpful, please let us know about this issue at https://github.com/flutter/flutter/issues.
+    ✗ ProcessException: Too many open files in system
+        Command: /usr/bin/which java
+    • #0      _ProcessImpl._runAndWait (dart:io-patch/process_patch.dart:473:7)
+      #1      _runNonInteractiveProcessSync (dart:io-patch/process_patch.dart:616:18)
+      #2      Process.runSync (dart:io-patch/process_patch.dart:66:12)
+      #3      LocalProcessManager.runSync (package:process/src/interface/local_process_manager.dart:91:20)
+      #4      ErrorHandlingProcessManager.runSync.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:481:37)
+      #5      _runSync (package:flutter_tools/src/base/error_handling_io.dart:380:14)
+      #6      ErrorHandlingProcessManager.runSync (package:flutter_tools/src/base/error_handling_io.dart:481:12)
+      #7      _PosixUtils._which (package:flutter_tools/src/base/os.dart:199:50)
+      #8      OperatingSystemUtils.which (package:flutter_tools/src/base/os.dart:79:31)
+      #9      AndroidSdk.findJavaBinary (package:flutter_tools/src/android/android_sdk.dart:388:33)
+      #10     AndroidLicenseValidator._checkJavaVersionNoOutput (package:flutter_tools/src/android/android_workflow.dart:287:42)
+      #11     AndroidLicenseValidator.validate (package:flutter_tools/src/android/android_workflow.dart:262:17)
+      #12     GroupedValidator.validate.<anonymous closure> (package:flutter_tools/src/doctor.dart:450:56)
+      #13     asyncGuard.<anonymous closure> (package:flutter_tools/src/base/async_guard.dart:111:32)
+      #14     _rootRun (dart:async/zone.dart:1190:13)
+      #15     _CustomZone.run (dart:async/zone.dart:1093:19)
+      #16     _runZoned (dart:async/zone.dart:1630:10)
+      #17     runZonedGuarded (dart:async/zone.dart:1618:12)
+      #18     runZoned (dart:async/zone.dart:1547:12)
+      #19     asyncGuard (package:flutter_tools/src/base/async_guard.dart:109:3)
+      #20     GroupedValidator.validate (package:flutter_tools/src/doctor.dart:450:11)
+      #21     asyncGuard.<anonymous closure> (package:flutter_tools/src/base/async_guard.dart:111:32)
+      #22     asyncGuard.<anonymous closure> (package:flutter_tools/src/base/async_guard.dart:109:18)
+      #23     _rootRun (dart:async/zone.dart:1190:13)
+      #24     _CustomZone.run (dart:async/zone.dart:1093:19)
+      #25     _runZoned (dart:async/zone.dart:1630:10)
+      #26     runZonedGuarded (dart:async/zone.dart:1618:12)
+      #27     runZoned (dart:async/zone.dart:1547:12)
+      #28     asyncGuard (package:flutter_tools/src/base/async_guard.dart:109:3)
+      #29     Doctor.startValidatorTasks (package:flutter_tools/src/doctor.dart:191:9)
+      #30     Doctor.diagnose (package:flutter_tools/src/doctor.dart:290:47)
+      #31     _doctorText (package:flutter_tools/runner.dart:230:18)
+      #32     _handleToolError (package:flutter_tools/runner.dart:155:27)
+      #33     _rootRunUnary (dart:async/zone.dart:1198:47)
+      #34     _CustomZone.runUnary (dart:async/zone.dart:1100:19)
+      #35     _FutureListener.handleValue (dart:async/future_impl.dart:143:18)
+      #36     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:696:45)
+      #37     Future._propagateToListeners (dart:async/future_impl.dart:725:32)
+      #38     Future._completeWithValue (dart:async/future_impl.dart:529:5)
+      #39     _AsyncAwaitCompleter.complete (dart:async-patch/async_patch.dart:40:15)
+      #40     _completeOnAsyncReturn (dart:async-patch/async_patch.dart:311:13)
+      #41     CrashReportSender.sendReport (package:flutter_tools/src/reporting/crash_reporting.dart)
+      #42     _asyncErrorWrapperHelper.errorCallback (dart:async-patch/async_patch.dart:91:64)
+      #43     _rootRunBinary (dart:async/zone.dart:1214:47)
+      #44     _CustomZone.runBinary (dart:async/zone.dart:1107:19)
+      #45     _FutureListener.handleError (dart:async/future_impl.dart:157:20)
+      #46     Future._propagateToListeners.handleError (dart:async/future_impl.dart:708:47)
+      #47     Future._propagateToListeners (dart:async/future_impl.dart:729:24)
+      #48     Future._completeError (dart:async/future_impl.dart:537:5)
+      #49     _AsyncAwaitCompleter.completeError (dart:async-patch/async_patch.dart:47:15)
+      #50     IOClient.send (package:http/src/io_client.dart)
+      #51     _asyncErrorWrapperHelper.errorCallback (dart:async-patch/async_patch.dart:91:64)
+      #52     _rootRunBinary (dart:async/zone.dart:1214:47)
+      #53     _CustomZone.runBinary (dart:async/zone.dart:1107:19)
+      #54     _FutureListener.handleError (dart:async/future_impl.dart:157:20)
+      #55     Future._propagateToListeners.handleError (dart:async/future_impl.dart:708:47)
+      #56     Future._propagateToListeners (dart:async/future_impl.dart:729:24)
+      #57     Future._completeError (dart:async/future_impl.dart:537:5)
+      #58     Future._asyncCompleteError.<anonymous closure> (dart:async/future_impl.dart:593:7)
+      #59     _rootRun (dart:async/zone.dart:1190:13)
+      #60     _CustomZone.run (dart:async/zone.dart:1093:19)
+      #61     _CustomZone.runGuarded (dart:async/zone.dart:997:7)
+      #62     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:1037:23)
+      #63     _microtaskLoop (dart:async/schedule_microtask.dart:41:21)
+      #64     _startMicrotaskLoop (dart:async/schedule_microtask.dart:50:5)
+      #65     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:118:13)
+      #66     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:169:5)
+
+
+[!] Xcode - develop for iOS and macOS (Xcode 11.3.1)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Xcode 11.3.1, Build version 11C505
+    ✗ Xcode end user license agreement not signed; open Xcode or run the command 'sudo xcodebuild -license'.
+    ✗ Xcode requires additional components to be installed in order to run.
+      Launch Xcode and install additional required components when prompted or run:
+        sudo xcodebuild -runFirstLaunch
+    ✗ CocoaPods not installed.
+        CocoaPods is used to retrieve the iOS and macOS platform side's plugin code that responds to your plugin usage on the Dart side.
+        Without CocoaPods, plugins will not work on iOS or macOS.
+        For more info, see https://flutter.dev/platform-plugins
+      To install:
+        sudo gem install cocoapods
+
+[!] Android Studio
+    • Android Studio at /Applications/Android Studio.app/Contents
+    ✗ Flutter plugin not installed; this adds Flutter specific functionality.
+    ✗ Dart plugin not installed; this adds Dart specific functionality.
+    ✗ Failed to run Java: ProcessException: Too many open files in system
+        Command: /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin/java -version
+    ✗ Unable to determine bundled Java version.
+    • Try updating or re-installing Android Studio.
+
+[✗] Cannot determine if IntelliJ is installed
+    ✗ Directory listing failed
+
+[☠] Connected device (the doctor check crashed)
+    ✗ Due to an error, the doctor check did not complete. If the error message below is not helpful, please let us know about this issue at https://github.com/flutter/flutter/issues.
+    ✗ ProcessException: Too many open files in system
+        Command: /usr/bin/xcrun simctl list --json devices
+    • 
+
+! Doctor found issues in 6 categories.
+```

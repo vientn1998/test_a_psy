@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:shapee_project/constant/app_constant.dart';
 import 'package:shapee_project/screens/account/login/login_screen.dart';
@@ -17,7 +18,7 @@ class WelcomeScreen extends StatelessWidget {
       body: Stack(
         children: [
           Image.asset(
-            StringUtils.getUrlAssets(AppImage.background_welcome),
+            StringUtils.getImageUrlAssets(AppImage.background_welcome),
             height: double.infinity,
             width: double.infinity,
             fit: BoxFit.fill,
@@ -31,12 +32,12 @@ class WelcomeScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(StringUtils.getUrlAssets("ic_logo_welcome")),
+                  SvgPicture.asset(StringUtils.getImageSVGUrlAssets(AppImage.ic_logo_welcome)),
                   SizedBox(
                     height: AppDimens.heightButton,
                   ),
-                  _widgetBtn("GET STARTED", false),
-                  _widgetBtn("Login", true),
+                  _widgetBtn(getTranslated(context, GET_STARTED), false),
+                  _widgetBtn(getTranslated(context, LOGIN), true),
                 ],
               ),
             ),
@@ -65,7 +66,7 @@ class WelcomeScreen extends StatelessWidget {
               child: Text(
                 title,
                 style: TextStyle(
-                    color: isLogin ? AppColors.text : Colors.white,
+                    color: isLogin ? AppColors.textPrimary : Colors.white,
                     fontSize: 15,
                     fontWeight: FontWeight.bold),
               ),

@@ -6,5 +6,6 @@ class StringUtils {
   }
 
   StringUtils._internal();
-  static String getUrlAssets(String image) => "assets/images/$image.png";
+  static String getImageUrlAssets(String image) => "assets/images/$image.png";
+  static String getImageSVGUrlAssets(String image) => "assets/images/$image.svg";
 }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="284px" height="271px" viewBox="0 0 284 271" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>image3</title>
+    <g id="Milestone-1---360x640dp-Android-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="HIW---2nd-state" transform="translate(-38.000000, -108.000000)">
+            <g id="Group" transform="translate(24.000000, 94.000000)">
+                <g id="Group" transform="translate(2.000751, 2.000751)">
+                    <g id="Frames-24px">
+                        <rect id="Rectangle-path" x="0" y="0" width="308.115685" height="308.115685"></rect>
+                    </g>
+                    <g id="Group" transform="translate(12.838154, 12.838154)" fill="#FFFFFF">
+                        <path d="M256.763071,25.6763071 L218.24861,25.6763071 L218.24861,0 L192.572303,0 L192.572303,77.0289213 L218.24861,77.0289213 L218.24861,51.3526142 L256.763071,51.3526142 L256.763071,243.924917 L25.6763071,243.924917 L25.6763071,51.3526142 L51.3526142,51.3526142 L51.3526142,25.6763071 L25.6763071,25.6763071 C11.5029856,25.6763071 0,37.1792927 0,51.3526142 L0,243.924917 C0,258.098239 11.5029856,269.601224 25.6763071,269.601224 L256.763071,269.601224 C270.936392,269.601224 282.439378,258.098239 282.439378,243.924917 L282.439378,51.3526142 C282.439378,37.1792927 270.936392,25.6763071 256.763071,25.6763071 Z" id="Shape"></path>
+                        <polygon id="Shape" points="89.8670748 51.3526142 179.73415 51.3526142 179.73415 25.6763071 89.8670748 25.6763071 89.8670748 0 64.1907677 0 64.1907677 77.0289213 89.8670748 77.0289213"></polygon>
+                        <rect id="Rectangle-path" x="51.3526142" y="102.705228" width="51.3526142" height="51.3526142"></rect>
+                        <rect id="Rectangle-path" x="115.543382" y="102.705228" width="51.3526142" height="51.3526142"></rect>
+                        <rect id="Rectangle-path" x="179.73415" y="102.705228" width="51.3526142" height="51.3526142"></rect>
+                        <rect id="Rectangle-path" x="51.3526142" y="166.895996" width="51.3526142" height="51.3526142"></rect>
+                        <rect id="Rectangle-path" x="115.543382" y="166.895996" width="51.3526142" height="51.3526142"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

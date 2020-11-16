@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="18px" viewBox="0 0 21 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>menu_instructions</title>
+    <g id="Milestone-2---360x640dp-Android-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Side-menu---Reader-(testing-phrase)" transform="translate(-18.000000, -484.000000)" fill="#FFFFFF">
+            <g id="menu-item-set-3" transform="translate(15.358186, 365.000000)">
+                <g id="instructions" transform="translate(1.000000, 115.821786)">
+                    <g id="Group" transform="translate(0.163299, 0.903606)">
+                        <g id="view-list" transform="translate(2.000000, 3.000000)">
+                            <path d="M0,10.5878567 L4.70571409,10.5878567 L4.70571409,5.88214261 L0,5.88214261 L0,10.5878567 L0,10.5878567 Z M0,16.4699993 L4.70571409,16.4699993 L4.70571409,11.7642852 L0,11.7642852 L0,16.4699993 L0,16.4699993 Z M0,4.70571409 L4.70571409,4.70571409 L4.70571409,0 L0,0 L0,4.70571409 L0,4.70571409 Z M5.88214261,10.5878567 L19.9992849,10.5878567 L19.9992849,5.88214261 L5.88214261,5.88214261 L5.88214261,10.5878567 L5.88214261,10.5878567 Z M5.88214261,16.4699993 L19.9992849,16.4699993 L19.9992849,11.7642852 L5.88214261,11.7642852 L5.88214261,16.4699993 L5.88214261,16.4699993 Z M5.88214261,0 L5.88214261,4.70571409 L19.9992849,4.70571409 L19.9992849,0 L5.88214261,0 L5.88214261,0 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

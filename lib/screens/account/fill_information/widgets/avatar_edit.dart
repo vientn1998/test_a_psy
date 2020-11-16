@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shapee_project/constant/app_constant.dart';
 import 'package:shapee_project/constant/app_image.dart';
 import 'package:shapee_project/utils/constant.dart';
@@ -18,12 +19,12 @@ class _AvatarEditState extends State<AvatarEdit> {
       child: Stack(
         children: [
           Padding(
-            padding: const EdgeInsets.all(AppDimens.paddingDefault),
+            padding: const EdgeInsets.all(0),
             child: Container(
-                child: Image.asset(
-                  StringUtils.getUrlAssets(AppImage.avatar_default),
+                child: SvgPicture.asset(
+                  StringUtils.getImageSVGUrlAssets(AppImage.avatar_default),
                   width: sizeDevice.width / 3.2,
-                  height: AppConstant().isFlatFormAndroid ? sizeDevice.height / 6.9 : sizeDevice.height / 6,
+                  height: AppConstant().isFlatFormAndroid ? sizeDevice.width / 2.6 : sizeDevice.width / 2.6,
                   fit: BoxFit.fill,
                 )),
           ),
@@ -55,7 +56,7 @@ class _AvatarEditState extends State<AvatarEdit> {
         ),
       ),
       right: 0,
-      top: 35,
+      top: 30,
     );
   }
 }

@@ -1,10 +1,12 @@
 import 'package:after_layout/after_layout.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:shapee_project/constant/app_constant.dart';
 import 'package:shapee_project/models/keyvalue_obj.dart';
 import 'package:shapee_project/screens/account/welcome/welcome_screen.dart';
+import 'package:shapee_project/screens/home/home_screen.dart';
 import 'package:shapee_project/utils/constant.dart';
 import 'package:shapee_project/utils/string_utils.dart';
 import '../../../app/import_file_common.dart';
@@ -43,22 +45,22 @@ class _IntroScreenState extends State<IntroScreen> with AfterLayoutMixin {
       slides.addAll([
         KeyValueObj(
             value: getTranslated(context, INTRO1),
-            pathImage: StringUtils.getUrlAssets(AppImage.image1),
+            pathImage: StringUtils.getImageSVGUrlAssets(AppImage.image1),
             height: 189,
             width: 284),
         KeyValueObj(
             value: getTranslated(context, INTRO2),
-            pathImage: StringUtils.getUrlAssets(AppImage.image2),
+            pathImage: StringUtils.getImageSVGUrlAssets(AppImage.image2),
             height: 282,
             width: 275),
         KeyValueObj(
             value: getTranslated(context, INTRO3),
-            pathImage: StringUtils.getUrlAssets(AppImage.image3),
+            pathImage: StringUtils.getImageSVGUrlAssets(AppImage.image3),
             height: 312,
             width: 312),
         KeyValueObj(
             value: getTranslated(context, INTRO4),
-            pathImage: StringUtils.getUrlAssets(AppImage.image4),
+            pathImage: StringUtils.getImageSVGUrlAssets(AppImage.image4),
             height: 232,
             width: 312),
       ]);
@@ -114,7 +116,7 @@ class _IntroScreenState extends State<IntroScreen> with AfterLayoutMixin {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Expanded(child: Container()),
-                Image.asset(
+                SvgPicture.asset(
                   item.pathImage,
                   height: item.height,
                   width: item.width,
